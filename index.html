@@ -1,0 +1,405 @@
+<html lang="es">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+    </style>
+
+<!--Analytics-->
+
+<!--Fin Analytics-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximun-scalable=1.0, maximun-scalable=1.0">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!--boostrap-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet'>
+<!---->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+<title>T-ickets | Compra tu boleto</title>
+<link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+
+<!--CSS-->
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/fontello.css">
+<!-- Js WoW-->
+<script src="js/wow.min.js"></script>
+<script> new WOW().init();</script>
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+  themeSystem: 'bootstrap'
+});
+     });
+</script>
+</head>
+
+<body style="font-family: 'Quicksand', sans-serif;"><!--Inicio proyecto-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3">
+        <div class="container">
+          <a class="navbar-brand " href="#"><img src="img/logo-t-ickets-blanco-filled.png" class="img-fluid" style="height: 50px" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Eventos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Comprar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Mi Cuenta</a>
+              </li>
+            </ul>
+            <form class="d-flex d-none">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container-fluid p-0" >
+        <div class="col-12 mx-auto bg-header-boleteria" style="height: 480px;">
+            <div class="container w-100 h-100 px-0">
+                <div class="container btn-group-vertical  h-100 text-center px-0">
+                    <h1 class="text-white mx-auto" style="font-size: 3.5em ;"><img src="img/logo-t-ickets-blanco-filled.png" class="img-fluid" style="height: 120px" alt=""></h1>
+                    <p class="mx-auto text-white" style="font-size: 1.2em;"><b>Compra</b> tu entrada <b>fácil, rápido</b> y <b>seguro</b></p>
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="container p-3">
+          <div class="row  flex-wrap-reverse">
+            <div class="col-12 col-lg-9">
+              <a class="" data-bs-toggle="collapse" href="#eventoPrincipal"  role="button" aria-expanded="false" aria-controls="collapseExample">
+                <div class="col-12  bg-white shadow-md  rounded-7 h-100 my-3" style="min-height: 350px" >
+                    
+                </div>       
+              </a>
+
+            </div>
+
+
+            <div class="col-12 col-lg-3 my-3">
+              <div class="container bg-white shadow-md rounded-7 mt-5 mt-lg-0"  >
+                <div class="container py-3 px-0">
+                  <li class="unlisted mt-3">
+                    <div class="row">
+                      <div class="col-1 me-5"><a href="" class="btn btn-dark icon-star p-3 rounded-6"></a></div>
+                      <div class="col-8">
+                        <h1 style="font-size: 1.1em">Nombre evento</h1>
+                        <p>Fecha, lugar</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="unlisted mt-3">
+                    <div class="row">
+                      <div class="col-1 me-5"><a href="" class="btn btn-dark icon-star p-3 rounded-6"></a></div>
+                      <div class="col-8">
+                        <h1 style="font-size: 1.1em">Nombre evento</h1>
+                        <p>Fecha, lugar</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="unlisted mt-3">
+                    <div class="row">
+                      <div class="col-1 me-5"><a href="" class="btn btn-dark icon-star p-3 rounded-6"></a></div>
+                      <div class="col-8">
+                        <h1 style="font-size: 1.1em">Nombre evento</h1>
+                        <p>Fecha, lugar</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="unlisted mt-3">
+                    <div class="row">
+                      <div class="col-1 me-5"><a href="" class="btn btn-dark icon-star p-3 rounded-6"></a></div>
+                      <div class="col-8">
+                        <h1 style="font-size: 1.1em">Nombre evento</h1>
+                        <p>Fecha, lugar</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="unlisted mt-3">
+                    <div class="row">
+                      <div class="col-1 me-5">
+                        <a href="" class="btn btn-dark icon-star p-3 rounded-6"></a>
+                      </div>
+                      <div class="col-8">
+                        <h1 style="font-size: 1.1em">Nombre evento</h1>
+                        <p>Fecha, lugar</p>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="collapse container mt-5 " id="eventoPrincipal">
+            
+                <div class="card card-body  rounded-7 py-5 b">
+                  <div class=" row ">
+                    <div class="col-12 col-lg-6 mx-auto my-5">                  
+                      <div class="container">
+                        <h1 style="font-size: 1.6em"><span id="artista" class="fw-bold">Jessi Uribe</span> | <span id="tour">Tour La Conquista</span></h1>
+                        <div class="col-12 border border-bottom my-3"></div>
+                        <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento"> Miercoles 23-09-2022</span></p>
+                        <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
+                        <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
+                        <a href="" class="btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</a>
+                      </div>
+                    </div>
+                      <div class="col-12 col-lg-6 mx-auto my-5 ">
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="list-group" id="myList" role="tablist">
+                              <a class="list-group-item list-group-item-action active" id="list-efectivo-list" data-toggle="list" href="#efectivo" role="tab" aria-controls="efectivo">
+                                Efectivo</a>
+                              <a class="list-group-item list-group-item-action" id="list-deposito-list" data-toggle="list" href="#deposito" role="tab" aria-controls="deposito">
+                                Dep/Transferencia</a>
+                              <a class="list-group-item list-group-item-action" id="list-paypal-list" data-toggle="list" href="#efectivo" role="tab" aria-controls="paypal">
+                                Paypal</a>
+                              <a class="list-group-item list-group-item-action" id="list-tarjeta-list" data-toggle="list" href="#tarjeta" role="tab" aria-controls="tarjeta">
+                                Tarjeta</a>
+                            </div>
+                          </div>
+                          <div class="col-6 ">
+                            <div class=" tab-content " id="nav-tabContent ">
+                              <div class="tab-pane fade show active" id="efectivo" role="tabpanel" aria-labelledby="list-efectivo-list">
+                               <div class="container mx-auto p-0 text-center">
+                                <div>
+                                  <h3 class=" text-center">Paga en Nuestras Oficinas</h3>
+                                </div>
+                                
+                                <button class="btn btn-primary">
+                                  Encuentranos
+
+                                </button>
+
+                               </div>
+                                
+                              </div>
+                              <div class="tab-pane fade" id="deposito" role="tabpanel" aria-labelledby="list-deposito-list">
+                                <div class="container ">
+                                  <div class="row">
+                                    <div class="col-12  p-0">
+                                      <h3 class="">
+                                        Realiza tu deposito con nosotros
+                                      </h3>
+                                      <button class="btn btn-primary" data-toggle="modal" data-target="#depositoModal">
+                                        Aceptar
+      
+                                      </button>
+                                    </div>
+                                    <div>
+
+                                    </div>
+
+
+                                  </div>
+
+                                </div>
+                                
+                              </div>
+                              <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="list-paypal-list">
+                                <div class="container  ">
+                                  <div class="row">
+                                    <div class="col-6" >
+                                      <img src="img/pp258.png" style="height: 50px; width: 50px;" alt="">
+                                    </div>
+                                    <div class="cl-6">
+                                      <h3 class="">  Comprar tus entradas atravez de Paypal </h3>
+
+                                    </div>
+
+                                  </div>
+                                  <button class="btn btn-primary" data-toggle="modal" data-target="#paypalModal">
+                                    Comprar
+  
+                                  </button>
+
+                                </div>
+                              </div>
+                              <div class="tab-pane fade" id="tarjeta" role="tabpanel" aria-labelledby="list-tarjeta-list">
+                               <div class="container text-center">
+                                <div> 
+                                  <h3> Realiza tu compra con tu tarjeta </h3> 
+                                </div>
+                               
+                                <button class="btn btn-primary " data-toggle="modal" data-target="#tarjetaleModal">
+                                  Comprar
+
+                                </button>
+                                
+
+                               </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      
+                      </div>
+                  </div>
+                  <script type="text/javascript">
+                    $('#myList a').on('click', function (e) {
+                    e.preventDefault()
+                    $(this).tab('show')
+                  })
+                  </script>
+
+
+
+                </div>
+              
+             
+
+
+            
+           
+          </div>
+
+        </div>
+
+      </div>
+     
+      <!-- Modales -->
+      <!--Deposito-->
+      <div class="modal fade bd-modal-lg " id="depositoModal" tabindex="-1" role="dialog" aria-labelledby="depositoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Realiza tu Deposito </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Paypal-->
+      <!--tarjeta -->    
+      <div class="modal fade bd-example-modal-lg " id="tarjetaleModal" tabindex="-1" role="dialog" aria-labelledby="tarjetaleModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Paga con tu tarjeta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---->
+
+
+        <div class="container-fluid mt-5" style="height: 900px">
+          <div class="container p-0">
+            <div class="row px-0">
+              <div class="col-12 col-lg-9">
+                <div class="row mx-auto p-0">
+                  <div class="col-12 col-lg-6 mx-auto my-5">
+                    <a class="" data-bs-toggle="collapse" href="#collapseExample"  role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <div class="container rounded-7 shadow-md" style="height: 350px;">
+                    </div>
+    
+                  </a>
+    
+                  <div class="collapse container mt-4 px-0" id="collapseExample">
+                    <div class="card card-body rounded-7 py-5">
+                      <div class="container">
+                        <h1 style="font-size: 1.6em"><span id="artista" class="fw-bold">Daddy Yankee</span> | <span id="tour">Tour Legendaddy</span></h1>
+                        <div class="col-12 border border-bottom my-3"></div>
+                        <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento"> Miercoles 28-10-2022</span></p>
+                        <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
+                        <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
+                        <a href="" class="btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</a>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+    
+                  <div class="col-12 col-lg-6 mx-auto my-5">
+                    <a class="" data-bs-toggle="collapse" href="#collapseExample2"  role="button" aria-expanded="false" aria-controls="collapseExample2">
+                      <div class="container rounded-7 shadow-md" style="height: 350px;">
+                      </div>
+      
+                    </a>
+    
+                    <div class="collapse container mt-4 px-0" id="collapseExample2">
+                      <div class="card card-body rounded-7 py-5">
+                        <div class="container">
+                          <h1 style="font-size: 1.6em"><span id="artista" class="fw-bold">Karol-G</span> | <span id="tour">Tour La bichota</span></h1>
+                          <div class="col-12 border border-bottom my-3"></div>
+                          <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento"> Miercoles 28-10-2022</span></p>
+                          <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
+                          <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
+                          <a href="" class="btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12 col-lg-3">
+                <div class="container my-5">
+                  <h1 style="font-size: 1.2em" class="fw-bold text-center">Calendario de Eventos</h1>
+                  <div class="col-12 bg-white rounded-7 shadow border border-2" style="height: 180px">
+                    <div id="calendario">
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+
+
+
+
+
+<!--Fin proyecto-->
+<!--Js-->
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/wow.min.js"></script>
+</body>
+</html>
