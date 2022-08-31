@@ -50,8 +50,8 @@
     e.path[2].children[1].classList.toggle("d-none");
 
     e.path[2].children[2].classList.toggle("d-none");
-    e.path[2].children[6].classList.add("d-none");
-  e.path[2].children[7].classList.toggle("d-none");
+    e.path[2].children[7].classList.add("d-none");
+ // e.path[2].children[7].classList.toggle("d-none");
 }
 if(e.target.getAttribute('class').split(" ")[0]=="payphone"){
     e.path[2].children[1].classList.toggle("d-none");
@@ -83,8 +83,6 @@ if(e.target.getAttribute('class').split(" ")[0]=="tarjeta"){
     e.path[2].children[5].classList.add("d-none");
     e.path[2].children[6].classList.add("d-none");
     e.path[2].children[7].classList.add("d-none");
-
-
  })))
  cancelar.forEach(e=>(e.addEventListener('click',(e)=>{
   e.path[2].children[1].classList.toggle("d-none");

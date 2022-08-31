@@ -41,31 +41,36 @@
   <!--Inicio proyecto-->
     <!--Nanvar-->
     <nav class="navbar navbar-expand-lg justify-content-between navbar-dark bg-black fixed-top py-3">
-        <div class="container-fluid col-lg-8 p-1 d-flex justify-content-end">
+        <div class="container-fluid col-lg-7    d-flex justify-content-end">
           <a class="navbar-brand " aria-label="TICKETS" href="#">
             <img src="img/logo-tickets.png" class="img-fluid" style="height: 50px" alt="">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="container collapse navbar-collapse flex-grow-0 " id="navbarSupportedContent">
-            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+         
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <ul class=" navbar-nav  mb-2 mb-lg-0 navbar-nav  ml-md-auto  d-md-flex">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Eventos</a>
+              <li class="nav-item active" aria-current="page"">
+                <a class="nav-link" href="#nuevoseventos">Eventos</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Comprar</a>
+              <li class="nav-item active" aria-current="page">
+                <a class="nav-link " href="#nuevoseventos">Comprar</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Mi Cuenta</a>
+              <li class="  nav-item">
+                <a class=" btn btn-outline-light p-l-2 " href="#"> Mi Cuenta <i ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg></i> </a>
               </li>
             </ul>
             <form class="d-flex d-none">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <button class="btn btn-outline-success" type="submit"> Search</button>
             </form>
           </div>
         </div>
@@ -167,7 +172,7 @@
       </div>
      
     <!--Lista de eventos-->
-      <div class="container " >
+      <div class="container " id="nuevoseventos" >
         
           <div class="container p-3">
             <div class="row flex-wrap-reverse justify-content-center">
@@ -187,7 +192,7 @@
                       <div class="container " >
                         <h1 style="font-size: 1.6em"><span id="artista" class="fw-bold">La ultima Mision 2K 2022</span> | <span id="tour">El festival mas grande de la musica urbana</span></h1>
                         <div class="col-12 border border-bottom my-3"></div>
-                        <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento">Miercoles 15-06-2022</span></p>
+                        <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento">Viernes 10-09-2022</span></p>
                         <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
                         <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
                         <p href="#" class="evento btn btn-primary fw-bold px-3 py-2 rounded-6" id="comprar">Comprar Entrada</p>
@@ -232,10 +237,7 @@
                             Ubicadas en C.C. MALL DEL SOL (segunda planta, diagonal a FOREVER 21)
                           </h5>
                           <h6> Información: 0983832112 Hiperfarmacias  y D´Mujer</h6>
-                          <button class="btn btn-primary" >
-                            Aceptar
-
-                          </button>
+                          
                         </div>
                         <div>  
                         </div>  
@@ -246,11 +248,11 @@
                   <div class=" deposito container text-center d-none">
                    
                     <div class="text-dark">
-                      <h1>Realiza tu pago a las siguientes cuentas </h1>
-                      <span>Pacifico</span>
-                      <h3> 123-456-789</h3>
-                      <samp>Pichincha</samp>
-                      <h3>123-456-789</h3>
+                      <h1>Realiza tu pago a las siguientes cuentas </h1>                  
+                      <span> Banco Internacional</span>
+                      <h3> 1500618760</h3>
+                      <samp>LA VENTA POR ESTE MEDIO ESTÁ SUJETA A 400 BOLETOS POR ZONA</samp>
+                      
       
                     </div>                     
                       <button class="btn btn-primary " data-toggle="modal" data-target="#tarjetaleModal">
@@ -267,7 +269,7 @@
                         <h3 class="">  Comprar tus entradas atravez de Payphone </h3>
 
                       </div>
-                      <button href="#" class="btn btn-primary fw-bold px-3 py-2 rounded-6" id="comprar">Comprar aqui</button>
+                      <a href="https://www.payphone.app/" target="_blank" class="btn btn-primary fw-bold px-3 py-2 rounded-6" id="comprar">Comprar aqui</a>
 
                     </div>
 
@@ -285,10 +287,10 @@
                             <h3 class="">Paga con tarjeta</h3>
                           </div>
                         </div>
-                        <button class="btn btn-primary" >
+                        <a class="btn btn-primary" target="_blank" href="https://flashticket.pagatusboletos.com/venta/es/comprarEvento?idEvento=800" >
                           Aceptar
 
-                        </button>
+                        </a>
                       </div>
                       <div>
 
@@ -356,7 +358,7 @@
                           <a class="payphone list-group-item list-group-item-action" id="list-paypal-list"   >
                             <i class="fas fa-dollar-sign"></i>
                             payphone</a>
-                          <a class="tarjeta list-group-item  list-group-item-action" id="list-tarjeta-list"  >
+                          <a class="tarjeta list-group-item  list-group-item-action" href="#!" id="list-tarjeta-list"  >
                             <i class="fa fa-credit-card"></i>
                             Tarjeta</a>                      
                       </div>
@@ -372,10 +374,7 @@
                             <h6> Información: 0983832112
 
                               Hiperfarmacias  y D´Mujer</h6>
-                            <button class="btn btn-primary" >
-                              Aceptar
-  
-                            </button>
+                           
                           </div>
                           <div>  
                           </div>  
@@ -384,10 +383,9 @@
                     <div class=" deposito container text-center d-none">
                       <div class="text-dark">
                         <h1>Realiza tu pago a las siguientes cuentas </h1>
-                        <span>Pacifico</span>
-                        <h3> 123-456-789</h3>
-                        <samp>Pichincha</samp>
-                        <h3>123-456-789</h3>        
+                        <span> Banco Internacional</span>
+                      <h3> 1500618760</h3>
+                      <samp>LA VENTA POR ESTE MEDIO ESTÁ SUJETA A 400 BOLETOS POR ZONA</samp>     
                       </div>                       
                         <button class="btn btn-primary " data-toggle="modal" data-target="#tarjetaleModal">
                           Comprar
@@ -418,7 +416,7 @@
                             </div>
                           </div>
                           
-                          <button class="btn btn-primary" >Aceptar</button>
+                          <a class="btn btn-primary" href="#!">Aceptar</a>
                         </div>
                         <div>
                         </div>
@@ -462,17 +460,9 @@
               <div class="container border border-bottom mb-3"></div>
               <div class="container-fluid   d-flex justify-content-center" >
   
-                <div class=" mb-4">
-                 
-                  <a class="btn btn-outline-light " aria-label="facebook" href="#!" role="button"><i class="fab fa-facebook"></i></a>
-
-                  
-                  <a class="btn btn-outline-light " href="#!" aria-label="fa-twitter" role="button"><i class="fab fa-twitter"></i></a>
-
-                  
-                  <a class="btn btn-outline-light  " href="#!" aria-label="fa-instagram" role="button"><i class="fab fa-instagram"></i></a>
-
-                 
+                <div class=" mb-4">                 
+                  <a class="btn btn-outline-light " aria-label="facebook" href="https://www.facebook.com/FlashThe2022" target="_blank" role="button"><i class="fab fa-facebook"></i></a>                
+                  <a class="btn btn-outline-light" aria-label="fa-instagram" href="https://www.instagram.com/flashthetickets/" target="_blank"  role="button"><i class="fab fa-instagram"></i></a>               
                 </div>
               </div>
               <div class="container-fluid d-flex align-items-center justify-content-center flex-column"> 
@@ -498,6 +488,7 @@
             
 
           </footer>
+       
 
  <!-- Modales -->
       <!--Deposito evento 1-->
@@ -514,16 +505,15 @@
               <div class="row">
                 <div class="cl-6 text-dark">
                   <h3>Realiza tu pago a las siguientes cuentas </h3>
-                  <span>Pacifico</span>
-                  <h3> 123-456-789</h3>
-                  <samp>Pichincha</samp>
-                  <h3>123-456-789</h3>
+                  <span> Banco Internacional</span>
+                      <h3> 1500618760</h3>
+                      <samp>LA VENTA POR ESTE MEDIO ESTÁ SUJETA A 400 BOLETOS POR ZONA</samp>
   
                 </div>
                 <div class="cl-6 text-dark">
                   <h1 style="font-size: 1.6em"><span id="artista" class="fw-bold">La ulima Misision</span> | <span id="tour">2K 2022</span></h1>
                           
-                          <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento"> Miercoles 15-06-2022</span></p>
+                          <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento"> Viernes 10-09-2022</span></p>
                           <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
                           <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
                          </div>
@@ -553,11 +543,10 @@
             <div class="modal-body">
               <div class="row">
                 <div class="cl-6 text-dark">
-                  <h3>Realiza tu pago a las siguientes cuentas </h3>
-                  <span>Pacifico</span>
-                  <h3> 123-456-789</h3>
-                  <samp>Pichincha</samp>
-                  <h3>123-456-789</h3>
+                  <h1>Realiza tu pago a las siguientes cuentas </h1>                  
+                      <span> Banco Internacional</span>
+                      <h3> 1500618760</h3>
+                      <samp>LA VENTA POR ESTE MEDIO ESTÁ SUJETA A 400 BOLETOS POR ZONA</samp>
   
                 </div>
                 <div class="cl-6 text-dark">
@@ -629,11 +618,14 @@
                 
                 
                 <div class="col-md-9 p-3 position-relative">
-                  <button class="container-fluid btn btn-outline-success" type="submit">Guardar</button>
+                  <button class="container-fluid btn btn-outline-success" type="submit">Reportar Pago</button>
+                  <hr>
+                  <a class="btn btn-outline-danger container-fluid pt-1" data-dismiss="modal" href=""> Cancelar</a>
                 </div>                
               </form>
             </div>              
-            </div>           
+            </div> 
+                   
           </div>
         </div>
       </div>
@@ -686,7 +678,10 @@
                 
                 
                 <div class="col-md-9 p-3 position-relative">
-                  <button class="container-fluid btn btn-outline-success" type="submit">Guardar</button>
+                  <button class="container-fluid btn btn-outline-success" type="submit">Reportar Pago</button>
+                  <hr>
+                  <a class="btn btn-outline-danger container-fluid pt-1" data-dismiss="modal" href=""> Cancelar</a>
+             
                 </div>                
               </form>
             </div>              
@@ -694,7 +689,25 @@
           </div>
         </div>
       </div>
-
+      <!--Modal datos de tarjeta-->
+      <div class="modal fade  " id="tarjetaModal" tabindex="-1" role="dialog" aria-labelledby="reporteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Reporta tu depósito </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container card" >
+                <h3>Gira 40 Aniversario Pimpinela</h3>
+              
+            </div>              
+            </div>           
+          </div>
+        </div>
+      </div>
       <!--Fin Modal-->
 
 
