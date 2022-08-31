@@ -54,3 +54,15 @@
     background-position: bottom;
     background-attachment: fixed;
   }
+a.list-group-item:hover{
+  background-color: #0d6efd;
+  color: aliceblue;
+}
+.paphome{
+  height: 50px; width: 50px;
+}
+.d-none{
+  opacity: 1;
+    transition-duration: 0.7s;
+    transition-property: opacity;
+}
