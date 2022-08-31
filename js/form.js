@@ -17,7 +17,7 @@
         }, false)
       })
   })()
-  const container = document.querySelectorAll('p');
+  const container = document.querySelectorAll('p.evento');
   container.forEach(c=>{c.addEventListener('click', (e) => {
     const dato = e.path[1].classList.contains("container")
 
@@ -44,9 +44,6 @@
 
  const link = document.querySelectorAll('a')
  link.forEach(c=>(c.addEventListener('click',(e)=>{
-    //console.log(e.target)
-    //console.log(e.target.getAttribute('class').split(" ")[0])
-    //$("."+e.target.getAttribute('class').split(" ")[0]).toggle("d-none")
     if(e.target.getAttribute('class').split(" ")[0]=="efectivo"){
     e.path[2].children[1].classList.toggle("d-none");
 
