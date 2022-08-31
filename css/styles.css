@@ -48,7 +48,7 @@
 
 
   .bg-header-boleteria{
-    background: url(/img/t-ickets-background-header-compra-tu-boleto-guayaquil-ecuador.jpg);
+    background: url('img/t-ickets-background-header-compra-tu-boleto-guayaquil-ecuador.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
