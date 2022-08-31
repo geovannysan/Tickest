@@ -17,9 +17,10 @@
         }, false)
       })
   })()
+  
   const container = document.querySelectorAll('p.evento');
   container.forEach(c=>{c.addEventListener('click', (e) => {
-    const dato = e.path[1].classList.contains("container")
+    //const dato = e.path[1].classList.contains("container")
 
     
     if(!e.target.localName =="p") {
@@ -44,34 +45,56 @@
 
  const link = document.querySelectorAll('a')
  link.forEach(c=>(c.addEventListener('click',(e)=>{
+  
     if(e.target.getAttribute('class').split(" ")[0]=="efectivo"){
     e.path[2].children[1].classList.toggle("d-none");
 
     e.path[2].children[2].classList.toggle("d-none");
+    e.path[2].children[6].classList.add("d-none");
+  e.path[2].children[7].classList.toggle("d-none");
 }
 if(e.target.getAttribute('class').split(" ")[0]=="payphone"){
     e.path[2].children[1].classList.toggle("d-none");
 
     e.path[2].children[4].classList.toggle("d-none");
+    e.path[2].children[6].classList.add("d-none");
+  e.path[2].children[7].classList.toggle("d-none");
 
 }
 if(e.target.getAttribute('class').split(" ")[0]=="tarjeta"){
     e.path[2].children[1].classList.toggle("d-none");
 
     e.path[2].children[5].classList.toggle("d-none");
+    e.path[2].children[6].classList.add("d-none");
+  e.path[2].children[7].classList.toggle("d-none");
 
 }
  })))
  const div = document.querySelectorAll('.back')
+ const cancelar =document.querySelectorAll('.cancelar')
 
  div.forEach(e=>(e.addEventListener('click',(e)=>{
     e.path[2].children[0].classList.toggle("d-none");
+
     e.path[2].children[1].classList.add("d-none");
     e.path[2].children[2].classList.add("d-none");
     e.path[2].children[3].classList.add("d-none");
     e.path[2].children[4].classList.add("d-none");
     e.path[2].children[5].classList.add("d-none");
     e.path[2].children[6].classList.add("d-none");
+    e.path[2].children[7].classList.add("d-none");
 
 
  })))
+ cancelar.forEach(e=>(e.addEventListener('click',(e)=>{
+  e.path[2].children[1].classList.toggle("d-none");
+  e.path[2].children[0].classList.add("d-none");
+  e.path[2].children[2].classList.add("d-none");
+  e.path[2].children[3].classList.add("d-none");
+  e.path[2].children[4].classList.add("d-none");
+  e.path[2].children[5].classList.add("d-none");
+  e.path[2].children[6].classList.remove("d-none");
+  e.path[2].children[7].classList.add("d-none");
+
+
+})))

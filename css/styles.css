@@ -4,7 +4,9 @@
   --bg-azul1: #d9e7f8;
 }
 
-
+body{
+  font-family: 'Quicksand', sans-serif;
+}
 .mt-n1 {
   margin-top: -0.25rem !important;
 }
@@ -65,4 +67,12 @@ a.list-group-item:hover{
   opacity: 1;
     transition-duration: 0.7s;
     transition-property: opacity;
+}
+.footer{
+  position: relative;
+  z-index: 1;
+}
+.navbar-nav{
+  justify-content: center !important;
+  align-items: center !important;
 }

@@ -37,17 +37,19 @@
 </script>
 </head>
 
-<body style="font-family: 'Quicksand', sans-serif;">
+<body >
   <!--Inicio proyecto-->
     <!--Nanvar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top py-3">
-        <div class="container">
-          <a class="navbar-brand " href="#"><img src="img/logo-tickets.png" class="img-fluid" style="height: 50px" alt=""></a>
+    <nav class="navbar navbar-expand-lg justify-content-between navbar-dark bg-black fixed-top py-3">
+        <div class="container-fluid col-lg-8 p-1 d-flex justify-content-end">
+          <a class="navbar-brand " aria-label="TICKETS" href="#">
+            <img src="img/logo-tickets.png" class="img-fluid" style="height: 50px" alt="">
+          </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <div class="container collapse navbar-collapse flex-grow-0 " id="navbarSupportedContent">
+            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
@@ -82,7 +84,7 @@
 
       </div>
       <!--Contenedor carrusel -->
-      <div class="container">
+      <div class="container  mt-n8" >
         <div class="container p-3">
           <div class="row  flex-wrap-reverse justify-content-center" >
             <div class="col-12 col-lg-6">
@@ -127,7 +129,7 @@
                   
                   <li class="unlisted mt-3">
                     <div class="row">
-                      <div class="col-1 me-5"><a href=""  class="btn btn-dark icon-star p-3 rounded-6"></a></div>
+                      <div class="col-1 me-5"><a href="" aria-label="icon-star" class="btn btn-dark icon-star p-3 rounded-6"></a></div>
                       <div class="col-8">
                         <h1 style="font-size: 1.1em">La ultima mision</h1>
                         <span>Fecha, lugar</span>
@@ -136,7 +138,7 @@
                   </li>
                   <li class="unlisted mt-3">
                     <div class="row">
-                      <div class="col-1 me-5"><a href="" class="btn btn-dark icon-star p-3 rounded-6"></a></div>
+                      <div class="col-1 me-5"><a href="#" aria-label="icon-star" class="btn btn-dark icon-star p-3 rounded-6"></a></div>
                       <div class="col-8">
                         <h1 style="font-size: 1.1em">Grupo Pimpinela</h1>
                         <span>Fecha, lugar</span>
@@ -146,7 +148,7 @@
                   <li class="unlisted mt-3">
                     <div class="row">
                       <div class="col-1 me-5">
-                        <a href="" class="btn btn-dark icon-star p-3 rounded-6"></a>
+                        <a href="" aria-label="icon-star" class="btn btn-dark icon-star p-3 rounded-6"></a>
                       </div>
                       <div class="col-8">
                         <h1 style="font-size: 1.1em">Proximamente</h1>
@@ -165,10 +167,11 @@
       </div>
      
     <!--Lista de eventos-->
-      <div class="container-fluid mt-5 h-auto" >
-          <div class="container p-0">
-            <div class="row px-0">
-              <div class="col-12 col-lg-12">
+      <div class="container " >
+        
+          <div class="container p-3">
+            <div class="row flex-wrap-reverse justify-content-center">
+              <div class="col-12 col-lg-9">
                 <div class="row mx-auto p-0">
                   <!--Evento 1-->
                   <div class="col-12 col-lg-6 mx-auto my-5">
@@ -190,16 +193,32 @@
                         <p href="#" class="evento btn btn-primary fw-bold px-3 py-2 rounded-6" id="comprar">Comprar Entrada</p>
                       </div>
                       <!--Lista de metos de pagos-->
-                      <div class="container list-group list-group-flush d-none text-center ">
+                      <div class="container list-group  list-group-flush d-none text-center ">
                         <h3 class="p-2">Metodos de pago</h3>
                         
                         <a class="efectivo list-group-item list-group-item-action "  id="list-efectivo-list" >
+                          <i class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                              <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                              <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                              <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                            </svg>
+                          </i>
                           Efectivo</a>
                         <a class="deposito list-group-item list-group-item-action" id="list-deposito-list" data-toggle="modal" data-target="#depositoModal" href="#deposito" >
+                          <i class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+                              <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+                            </svg>
+                          </i>
+                          
                           Dep/Transferencia</a>
                         <a class="payphone list-group-item list-group-item-action" id="list-paypal-list"   >
+                          <i class="fas fa-dollar-sign"></i>
                           payphone</a>
                         <a class="tarjeta list-group-item  list-group-item-action" id="list-tarjeta-list"  >
+                          <i class="fa fa-credit-card"></i>
                           Tarjeta</a>                           
                     </div>
                     <!-- opciones de pagos-->
@@ -210,8 +229,9 @@
                             Realiza tu pago en nuestras oficinas
                           </h3>
                           <h5>
-                            Ubicadas en Calle primera y segunda
+                            Ubicadas en C.C. MALL DEL SOL (segunda planta, diagonal a FOREVER 21)
                           </h5>
+                          <h6> Información: 0983832112 Hiperfarmacias  y D´Mujer</h6>
                           <button class="btn btn-primary" >
                             Aceptar
 
@@ -281,6 +301,12 @@
                   <div class="container text-center d-none p-3 ">
                     <button class="back btn btn-outline-danger">Regresar</button>
                   </div>
+                  <div id="" class="container text-center d-none p-3">
+                    <button class="cancelar cancel btn btn-outline-danger ">
+                      Cancelar
+                    </button>
+                     </div>
+
                       
                       
                      
@@ -302,20 +328,36 @@
                           <h1 style="font-size: 1.6em"><span id="artista" class="fw-bold">Grupo Pimpinela</span> | <span id="tour">Gira 40 Aniversario </span></h1>
                           <div class="col-12 border border-bottom my-3"></div>
                           <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento"> Viernes 28-10-2022</span></p>
-                          <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
-                          <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
+                          <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento">Coliseo Voltaire Paladines Polo</span></p>
+                          <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 20:30</span></p>
                           <p  class="evento btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</p>
                         </div>
                         <!--Lista de opciones de pago-->
                         <div class="container list-group list-group-flush d-none text-center">
                           <h3 class="p-2">Metodos de pago</h3>
-                          <a class="efectivo list-group-item list-group-item-action " id="list-efectivo-list"  href="#efectivo"  >
+                          <a class="efectivo list-group-item list-group-item-action "  id="list-efectivo-list" >
+                            <i class="">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                                <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                                <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                              </svg>
+                            </i>
                             Efectivo</a>
-                          <a class="deposito list-group-item list-group-item-action" id="list-deposito-list" data-toggle="modal" data-target="#depositoModal2" href="#deposito"  >
+                          <a class="deposito list-group-item list-group-item-action" id="list-deposito-list" data-toggle="modal" data-target="#depositoModal2" href="#deposito" >
+                            <i class="">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+                                <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+                              </svg>
+                            </i>
+                            
                             Dep/Transferencia</a>
-                          <a class="payphone list-group-item list-group-item-action" id="list-paypal-list"  href="#paypal"  >
+                          <a class="payphone list-group-item list-group-item-action" id="list-paypal-list"   >
+                            <i class="fas fa-dollar-sign"></i>
                             payphone</a>
-                          <a class="tarjeta list-group-item  list-group-item-action" id="list-tarjeta-list"  href="#tarjeta"  >
+                          <a class="tarjeta list-group-item  list-group-item-action" id="list-tarjeta-list"  >
+                            <i class="fa fa-credit-card"></i>
                             Tarjeta</a>                      
                       </div>
                       <div class="efectivo container text-center d-none">
@@ -325,8 +367,11 @@
                               Realiza tu pago en nuestras oficinas
                             </h3>
                             <h5>
-                              Ubicadas en Calle primera y segunda
+                              Ubicadas en C.C. MALL DEL SOL (segunda planta, diagonal a FOREVER 21)
                             </h5>
+                            <h6> Información: 0983832112
+
+                              Hiperfarmacias  y D´Mujer</h6>
                             <button class="btn btn-primary" >
                               Aceptar
   
@@ -382,6 +427,9 @@
                     <div class="container text-center d-none p-3 ">
                       <button class="back btn btn-outline-danger">Regresar</button>
                     </div>
+                    <div class=" container text-center d-none p-3 ">
+                      <button class="cancelar btn btn-outline-danger">cancelar</button>
+                    </div>
                   </div>
                       </div>
                     </div>
@@ -395,54 +443,28 @@
             
         
           <!--Footer-->
-          <footer class="container-fluid h-55 bg-black">
-            <div class="container p-3">
-              
-             
-              <div class="row d-flex justify-content-center align-items-center">
-                <div class="cl-12 text-center">
-                  <h2 class="text-white ">Comunicate Con Nosotros</h2>
-               </div>
-               <div class="">
-                <h2 class="text-white">Flash The Tickets</h2>
-                <div class="cl-6 col-lg-4">
-                  <p class="text-white">
-                    Estamos aqui para poder darte la mejor experiencia y servicio, si tienes alguna duda o quieres comunicarte con nosotros, Estamos aqui para ayudarte.
-                  </p>
-                </div>
-               
-
-              </div>
-                <div class="col-12 col-lg-4 d-flex flex-column rounded-6 text-white p-1 " >
-
-                  
-                  <div class="row cl-6">
-
-                    <div class="cl-12 btn btn-outline-success mt-2 p-3">
-                      <li class="fab fa-whatsapp" ></li>  Envíanos un mensaje
-                    </div>
-                    <div class="cl-12 btn btn-outline-light  p-3 mt-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                      </svg>
-                      Comunicate con nosotros
-                    </div>
-
+          <footer class="footer  container-fluid h-55 bg-black">
+            <div  class="container ">           
+             <div class="container  justify-content-center p-2">
+                <div class="row text-center p-2" >
+                  <div class="col-12 col-lg-3"><li class=" unlisted nav-item" href="#!" aria-label="terminos"><a class="nav-link text-white" role="link" href="">Quiénes Somos</a> </li>  
+                  </div>
+                  <div class="col-12 col-lg-3"><li class="unlisted nav-item" href="#!" aria-label="terminos"><a class="nav-link text-white" role="link" href="">Términos y condiciones</a> </li>  
+                  </div>
+                  <div class="col-12 col-lg-3"><li class="unlisted nav-item" href="#!" aria-label="terminos"><a class="nav-link text-white" role="link" href="">Puntos de venta</a> </li>  
+                  </div>
+                  <div class="col-12 col-lg-3"><li class="unlisted nav-item" href="#!" aria-label="terminos"><a class="nav-link text-white" role="link" href="">Contáctanos</a> </li>  
                   </div>
                   
-
-                </div>
-                <div class="cl-12 col-lg-6 rounded-6  ">
-                  <img class="w-100" src="img/flash.png"  alt="">
-
-                </div>
+                 </div>             
 
               </div>
+              <div class="container border border-bottom mb-3"></div>
               <div class="container-fluid   d-flex justify-content-center" >
   
                 <div class=" mb-4">
                  
-                  <a class="btn btn-outline-light " aria-label="facebook" href="#" role="button"><i class="fab fa-facebook"></i></a>
+                  <a class="btn btn-outline-light " aria-label="facebook" href="#!" role="button"><i class="fab fa-facebook"></i></a>
 
                   
                   <a class="btn btn-outline-light " href="#!" aria-label="fa-twitter" role="button"><i class="fab fa-twitter"></i></a>
@@ -453,9 +475,16 @@
                  
                 </div>
               </div>
-              <div class="container-fluid d-flex justify-content-center"> 
-                <div class="mb-4 text-white">
+              <div class="container-fluid d-flex align-items-center justify-content-center flex-column"> 
+                <div class="mb-4 text-white text-center">
                   <p><span style="font-size: 0.7em;"> COPYRIGHT © 2022 FLASH THE TICKETS - TODOS LOS DERECHOS RESERVADOS</span></p>
+
+                </div>
+                <div class=" d-flex justify-content-center">
+                  <a href=""><img class="" src="img/flash.png" style="height: 30px;" alt=""></a> 
+                </div>
+                <div class="mb-4 text-white">
+                  <!--<li class="unlisted nav-item" href="#!" aria-label="terminos"><a class="nav-link text-white" role="link" href="">Términos y condiciones</a> </li>  -->
 
                 </div>
 
@@ -466,12 +495,13 @@
 
 
             </div>
+            
 
           </footer>
 
  <!-- Modales -->
       <!--Deposito evento 1-->
-      <div class="modal fade  " id="depositoModal" tabindex="-1" role="dialog" aria-labelledby="depositoModalLabel" aria-hidden="true">
+      <div class="modal fade rounded-7 " id="depositoModal" tabindex="-1" role="dialog" aria-labelledby="depositoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered " role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -534,7 +564,7 @@
                   <h1 style="font-size: 1.6em"><span id="artista" class="fw-bold">Gira 40 Aniversario </span> | <span id="tour">Pimpinela</span></h1>
                           <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento"> Viernes 28-10-2022</span></p>
                           <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
-                          <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
+                          <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 20:30</span></p>
                 </div>
 
               </div>
