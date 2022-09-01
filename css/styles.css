@@ -68,11 +68,30 @@ a.list-group-item:hover{
     transition-duration: 0.7s;
     transition-property: opacity;
 }
-.footer{
-  position: relative;
-  z-index: 1;
-}
+
+
 .navbar-nav{
   justify-content: center !important;
   align-items: center !important;
 }
+.contenedor{
+  position: absolute; 
+  
+ 
+
+
+}
+.footer{
+  z-index: 1;
+  position: absolute;
+}
+
+/*#div{
+  background-color: red;
+  bottom: 0;
+  height: 150px;
+  position: fixed;
+  width: 50%;
+  z-index: 2;
+ 
+}*/
