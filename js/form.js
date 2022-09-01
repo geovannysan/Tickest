@@ -54,19 +54,19 @@
  // e.path[2].children[7].classList.toggle("d-none");
 }
 if(e.target.getAttribute('class').split(" ")[0]=="payphone"){
-    e.path[2].children[1].classList.toggle("d-none");
+   // e.path[2].children[1].classList.toggle("d-none");
 
-    e.path[2].children[4].classList.toggle("d-none");
-    e.path[2].children[6].classList.add("d-none");
-  e.path[2].children[7].classList.toggle("d-none");
+   // e.path[2].children[4].classList.toggle("d-none");
+   // e.path[2].children[6].classList.add("d-none");
+  //e.path[2].children[7].classList.toggle("d-none");
 
 }
 if(e.target.getAttribute('class').split(" ")[0]=="tarjeta"){
-    e.path[2].children[1].classList.toggle("d-none");
+  e.path[2].children[1].classList.toggle("d-none");
 
-    e.path[2].children[5].classList.toggle("d-none");
-    e.path[2].children[6].classList.add("d-none");
-  e.path[2].children[7].classList.toggle("d-none");
+   e.path[2].children[5].classList.toggle("d-none");
+   e.path[2].children[6].classList.add("d-none");
+ e.path[2].children[7].classList.toggle("d-none");
 
 }
  })))
@@ -96,3 +96,27 @@ if(e.target.getAttribute('class').split(" ")[0]=="tarjeta"){
 
 
 })))
+const  validacedula = async (e)  =>{
+  
+  try{
+    const {message} = await  fetch('https://turnos.manta.gob.ec/consultacedula/"'+e+'"',
+      {'headers': {'Access-Control-Allow-Origin': '*',}}).then(response => response.json());
+      const email = message.email? message.email : '';
+      const edad = message.fecha_nacimiento?message.fecha_nacimiento:'';
+      const telefono =message.telefono?message.telefono:'';
+      
+      document.getElementById('email').value= email
+      document.getElementById('fecha').value=edad
+      document.getElementById('telefono'.value.telefono)
+    return [...info]
+    
+   }catch{
+   
+   }
+}
+//validacedula()
+/*const  validacedula = async (e)  =>{
+  const cedula = await  fetch('https://turnos.manta.gob.ec/consultacedula/1314780774',
+  {'headers': {'Access-Control-Allow-Origin': '*',}}).then(response => response.json());
+  
+}*/

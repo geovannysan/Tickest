@@ -57,7 +57,7 @@ body{
     background-attachment: fixed;
   }
 a.list-group-item:hover{
-  background-color: #0d6efd;
+  background-color: hwb(204 18% 0%);
   color: aliceblue;
 }
 .paphome{
@@ -85,7 +85,9 @@ a.list-group-item:hover{
   z-index: 1;
   position: absolute;
 }
-
+.borderless{
+  border-top: none;
+}
 /*#div{
   background-color: red;
   bottom: 0;
