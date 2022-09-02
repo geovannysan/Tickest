@@ -97,20 +97,23 @@ if(e.target.getAttribute('class').split(" ")[0]=="tarjeta"){
 
 })))
 const  validacedula = async (e)  =>{
-  
+  const numero = document.getElementById(e).value;
+  if (!numero) return
   try{
-    const {message} = await  fetch('https://turnos.manta.gob.ec/consultacedula/"'+e+'"',
-      {'headers': {'Access-Control-Allow-Origin': '*',}}).then(response => response.json());
-      const email = message.email? message.email : '';
-      const edad = message.fecha_nacimiento?message.fecha_nacimiento:'';
-      const telefono =message.telefono?message.telefono:'';
-      
-      document.getElementById('email').value= email
-      document.getElementById('fecha').value=edad
-      document.getElementById('telefono'.value.telefono)
-    return [...info]
+    const cedula = await  fetch("https://turnos.manta.gob.ec/consultacedula/"+numero+"",
+  {'headers': {'Access-Control-Allow-Origin': '*',}}).then(response => response.json());   
     
-   }catch{
+      const email = cedula.message['email']? cedula.message['email'] : '';
+      const edad = cedula.message['fecha_nacimiento'] ? cedula.message['fecha_nacimiento']: '';
+      const telefono =cedula.message['telefono'] ? cedula.message['telefono']: '';
+      const nombres = cedula.message['name']? cedula.message['name']:'';   
+     document.getElementById('email').value= email
+      document.getElementById('fecha').value=edad
+      document.getElementById('telefono').value=telefono
+      document.getElementById('nombre').value=nombres         
+   }catch (Error){
+     alert('Hubo un error en su Cédula')
+     return Error;
    
    }
 }

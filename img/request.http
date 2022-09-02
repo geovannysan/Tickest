@@ -1,5 +1,5 @@
 ###
-GET https://turnos.manta.gob.ec/consultacedula/1314780774 HTTP/1.1
+GET https://turnos.manta.gob.ec/consultacedula/ HTTP/1.1
 //https://turnos.manta.gob.ec/consultacedula/{{CEDULA}}
 
 
