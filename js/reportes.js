@@ -117,7 +117,7 @@ report.addEventListener('click', async function (event) {
     Swal.fire(
       'Erro',
       'hubo un error intente de nuevo',
-      'danger'
+      'warning'
     )
 
 
