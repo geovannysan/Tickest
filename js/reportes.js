@@ -103,19 +103,22 @@ report.addEventListener('click', async function (event) {
     u_telefono: document.getElementById('telefonos').value
   }
   try {
-    const registro = await fetch('http://localhost:4000/api/usuario', {
-      method: "POST",
-      body: JSON.stringify(_datos),
-      headers: { "Content-type": "application/json; charset=UTF-8" }
-    }).then(response => response.json())
-    const resultado = registro
-    if (!resultado) return
-    Swal.fire(
-      'Su informacion a sido guardada',
-      'Espere a que un colaborador se contacte con usted',
-      'success'
-    )
-    $('#Modaltarjeta').modal('hide')
+    const { data, status }  = await axios.post('https://rec.netbot.ec/pdfqr/api/v1/registro',_datos)
+    if (data.success){
+      Swal.fire(
+        'Su informacion a sido guardada',
+        'Espere a que un colaborador se contacte con usted',
+        'success'
+      )
+      $('#Modaltarjeta').modal('hide')
+    }else{
+          Swal.fire(
+            'Erro',
+            'hubo un error intente de nuevo',
+            'warning'
+      )
+    }
+    
   } catch (error) {
     Swal.fire(
       'Erro',
