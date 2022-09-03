@@ -1,10 +1,9 @@
 
 const valida = async (e) => {
   const num = document.getElementById(e).value
-
-
   if (!num) return
   $('#spinner').find('span').removeClass('d-none')
+  $('#search').addClass('d-none')
   try {
     const { data } = await axios.get("https://rec.netbot.ec/pdfqr/api/v1/cedula/" + num)
     const { message } = await data;
@@ -16,17 +15,19 @@ const valida = async (e) => {
     document.getElementById('fechas').value = edad
     document.getElementById('telefonos').value = telefono
     document.getElementById('nombres_apelli').value = nombres
-    console.log(data.message.length)
-    //spinner.addClass('d-none')
     $('#spinner').find('span').addClass('d-none')
-    if(!nombres) Swal.fire('','cedula no registrada','warning')
-    $('#spinner').find('span').addClass('d-none')
-
+    $('#search').removeClass('d-none')
+    if (!nombres) {
+      Swal.fire('', 'Cédula no registrada', 'warning')
+      $('#spinner').find('span').addClass('d-none')
+      $('#search').removeClass('d-none')
+    }
   } catch (Error) {
     $('#spinner').find('span').addClass('d-none')
+    $('#search').removeClass('d-none')
     Swal.fire(
-      'Error',
-      'Espere a que un colaborador se contacte con usted',
+      'Hubo un error',
+      'Cédula inválida',
       'warning'
     )
     return Error;
@@ -43,8 +44,8 @@ function reportatarjeta(e) {
   document.getElementById('telefonos').value = ''
 
   $('#Modaltarjeta').modal('show', { backdrop: 'static', keyboard: false });
- 
-  
+
+
   document.getElementById('formulario').value = e;
   $('#titel').text(e);
 
@@ -94,7 +95,7 @@ report.addEventListener('click', async function (event) {
     } else {
       Swal.fire(
         'Erro',
-        'hubo un error intente de nuevo'+data.message,
+        'hubo un error intente de nuevo' + data.message,
         'warning'
       )
     }

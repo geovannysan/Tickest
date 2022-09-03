@@ -94,9 +94,9 @@ div.forEach(e => (e.addEventListener('click', (e) => {
 })))*/
 const validacedula = async (e) => {
   const numero = document.getElementById(e).value;
-  $('#spinner').toggle('spinner')
-
   if (!numero) return
+  $('.spinner-border').removeClass('d-none')
+  $('.search').addClass('d-none')
   try {
     const { data } = await axios.get("https://rec.netbot.ec/pdfqr/api/v1/cedula/" + numero)
     const { message } = await data;
@@ -106,12 +106,24 @@ const validacedula = async (e) => {
     const nombres = message['name'] ? message['name'] : '';
     document.getElementById('mail').value = email
     document.getElementById('date').value = edad
-    document.getElementById('telefono').value = telefono
+    document.getElementById('celular').value = telefono
     document.getElementById('names').value = nombres
+    $('.search').removeClass('d-none')
+    $('.spinner-border').addClass('d-none')
+    if (!nombres) {
+      Swal.fire('', 'Cédula no registrada', 'warning')
+      $('.search').removeClass('d-none')
+      $('.spinner-border').addClass('d-none')
+    }
   } catch (Error) {
-    //alert(Error,'Hubo un error en su Cédula')
+    $('.search').removeClass('d-none')
+    $('.spinner-border').addClass('d-none')
+    Swal.fire(
+      'Hubo un error',
+      '' + Error,
+      'warning'
+    )
     return Error;
-
   }
 }
 (function () {
@@ -148,15 +160,15 @@ reporte.addEventListener('click', async function (event) {
     u_telefono: document.getElementById('celular').value
   }
   try {
-    const { data, status }  = await axios.post('https://rec.netbot.ec/pdfqr/api/v1/registro',_datos)
-    if (!data.success){
-      Swal.fire('Erro','hubo un error intente de nuevo','warning')
-        }else{
-            Swal.fire('Su informacion a sido guardada','Espere a que un colaborador se contacte con usted','success')
-          }
+    const { data, status } = await axios.post('https://rec.netbot.ec/pdfqr/api/v1/registro', _datos)
+    if (!data.success) {
+      Swal.fire('Erro', 'hubo un error intente de nuevo', 'warning')
+    } else {
+      Swal.fire('Su informacion a sido guardada', 'Espere a que un colaborador se contacte con usted', 'success')
+    }
     $('#Modaltarjeta').modal('hide')
   } catch (error) {
-    Swal.fire('Erro','hubo un error intente de nuevo','warning')
+    Swal.fire('Erro', 'hubo un error intente de nuevo', 'warning')
     return error
   }
 })
