@@ -176,18 +176,24 @@ reporte.addEventListener('click', async function (event) {
     u_telefono: document.getElementById('celular').value
   }
   try {
-    const registro = await fetch('http://localhost:4000/api/usuario', {
+    const { data, status }  = await axios.post('https://rec.netbot.ec/pdfqr/api/v1/registro',_datos)
+   /* const registro = await fetch('http://localhost:4000/api/usuario', {
       method: "POST",
       body: JSON.stringify(_datos),
       headers: { "Content-type": "application/json; charset=UTF-8" }
-    }).then(response => response.json())
+    }).then(response => response.json())*/
     const resultado = registro
-    if (!resultado) return
-    Swal.fire(
-      'Su informacion a sido guardada',
-      'Espere a que un colaborador se contacte con usted',
-      'success'
-    )
+    if (!data.success){
+      Swal.fire(
+          'Erro',
+          'hubo un error intente de nuevo',
+          'warning'
+        )}else{
+            Swal.fire(
+              'Su informacion a sido guardada',
+              'Espere a que un colaborador se contacte con usted',
+              'success'
+            )}
     $('#Modaltarjeta').modal('hide')
   } catch (error) {
     Swal.fire(
@@ -239,7 +245,7 @@ const validacedula2 = async (e) => {
     document.getElementById('nombredos').value = nombres
 
   } catch (Error) {
-    alert('Hubo un error en su Cédula')
+    //alert('Hubo un error en su Cédula')
 
 
     return Error;

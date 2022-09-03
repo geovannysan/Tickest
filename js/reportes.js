@@ -18,13 +18,13 @@ const valida = async (e) => {
     document.getElementById('fechas').value = edad
     document.getElementById('telefonos').value = telefono
     document.getElementById('nombres_apelli').value = nombres
-    console.log(data)
+    
 
   } catch (Error) {
     Swal.fire(
       'Error',
       'Espere a que un colaborador se contacte con usted',
-      'danger'
+      'warning'
     )
     console.log(Error)
 
@@ -104,6 +104,7 @@ report.addEventListener('click', async function (event) {
   }
   try {
     const { data, status }  = await axios.post('https://rec.netbot.ec/pdfqr/api/v1/registro',_datos)
+    console.log(data,status)
     if (data.success){
       Swal.fire(
         'Su informacion a sido guardada',
