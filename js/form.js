@@ -100,6 +100,7 @@ cancelar.forEach(e => (e.addEventListener('click', (e) => {
 })))
 const validacedula = async (e) => {
   const numero = document.getElementById(e).value;
+  $('#spinner').toggle('spinner')
 
   if (!numero) return
   try {
@@ -152,6 +153,7 @@ const validacedula = async (e) => {
       }, false)
     })
 })()
+
 const reporte = document.getElementById('td')
 var form = document.querySelectorAll('.needs-validation')
 reporte.addEventListener('click', async function (event) {
@@ -205,7 +207,14 @@ $('.cerrar').click(function () {
   $('#Modaltarjeta').modal('hide')
 })
 function reprtcompro(e) {
-
+  document.getElementById('names').value = ''
+  document.getElementById('ce_dni').value = ''
+  document.getElementById('mail').value = ''
+  document.getElementById('date').value = ''
+  document.getElementById('bancos').value = ''
+  document.getElementById('banconom').value = ''
+  document.getElementById('formulario').value = ''
+  document.getElementById('telefonos').value = ''
   document.getElementById('formularios').value = e;
   $('.titel').text(e);
 
