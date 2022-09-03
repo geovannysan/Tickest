@@ -1,6 +1,8 @@
 
 const valida = async (e) => {
   const num = document.getElementById(e).value
+
+
   if (!num) return
 
   try {
@@ -29,8 +31,8 @@ const valida = async (e) => {
     return Error;
 
   }
-
 }
+
 function reportatarjeta(e) {
   //document.getElementById("report").reset();
   document.getElementById('nombres_apelli').value = ''
@@ -48,7 +50,8 @@ function reportatarjeta(e) {
   $('#titel').text(e);
 
 }
-//$('#myModalExito').modal('hide'); 
+
+
 
 
 const registro = async (info) => {
@@ -88,7 +91,7 @@ report.addEventListener('click', async function (event) {
 
   if (!document.getElementById('nombres_apelli').value || !document.getElementById('cedulas').value || !document.getElementById('correos').value) return
   if (!document.getElementById('fechas') || !document.getElementById('formulario') || !document.getElementById('telefonos').value) return
-
+  //variables de los datos
   let _datos = {
     u_nombre: document.getElementById('nombres_apelli').value,
     u_cedula: document.getElementById('cedulas').value,
@@ -119,6 +122,7 @@ report.addEventListener('click', async function (event) {
       'hubo un error intente de nuevo',
       'warning'
     )
+    return error
 
 
   }
