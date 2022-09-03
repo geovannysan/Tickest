@@ -31,7 +31,9 @@
 <link rel="stylesheet" href="css/fontello.css">
 <!-- Js WoW-->
 <script src="js/wow.min.js"></script>
-<script> new WOW().init();</script>
+<script> new WOW().init();
+
+</script>
 <script>
   
 </script>
@@ -1099,7 +1101,8 @@
                 
                 
                 <div class="row p-3 d-flex justify-content-center m-1">
-                  <button class="close col-4 m-1 btn btn-outline-danger" id="cerrar" data-dismiss="modal">Cancelar</button>
+                  
+                  <button class=" col-4 m-1 btn btn-outline-danger" id="cerrar" data-dismiss="modal">Cancelar</button>
                   <button class="col-4 m-1  btn btn-outline-success" type="submit">Reportar Pago</button>                
                 </div>                
               </form>
@@ -1239,7 +1242,7 @@
       <!-- Terminos y condiciones -->
       <div class="modal fade bg" id="terminosModalModal" tabindex="-1" role="dialog" aria-labelledby="erminosModalModalLabel" aria-hidden="true">
         <div class="modal-dialog  modal-lg" role="document">
-          <div class="terminos  modal-content  text-white">
+          <div class="terminos  modal-content  ">
             <div class="modal-header">
               <h5 class="modal-title text-center justify-content-center ">TÉRMINOS Y CONDICIONES</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1271,11 +1274,11 @@
 
       <!--Modal tarjeta save -->
       <div class="modal fade  " id="Modaltarjeta" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="reporteModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-dialog modal-dialog-centered  " role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Reporta </h5>
-              <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+              <button type="button" class="cerrar close"  data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -1285,11 +1288,11 @@
                 <h3 class="text-center" style="font-size: 1.4em;" id="titel" ></h3>
               <form class="row g-3 needs-validation d-flex justify-content-center" novalidate>
                 
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <label for="validationDefaultUsername" class="form-label">Cédula</label>
                   <div class="input-group">
                     
-                    <input type="text" class="form-control" id="cedulas" name="cedulas"  aria-describedby="inputGroupPrepend2" required>
+                    <input type="text"   onkeypress="return solonumeros(event)" class="form-control" id="cedulas" name="cedulas"  aria-describedby="inputGroupPrepend2" required>
                     <button type="button" onclick="valida('cedulas')" class="input-group-text btn btn-primary" >
                       <svg id="search" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -1302,19 +1305,7 @@
                       </button> 
                   </div>
                 </div>
-                <div class="col-md-6 position-relative">
-                    <label class="form-label">Apellidos Nombres</label>
-                    <div class="input-group has-validation">
-                      <span class="btn btn-light input-group-text" ><svg class="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                      </svg></span>
-                        <input type="text" class="form-control" id="nombres_apelli" name="nombres_apelli" required>
-                      
-                      
-                    </div>
-                  </div>
-                  <div class="col-md-6 position-relative">
+<div class="col-md-6 position-relative">
                     <label class="form-label">Fecha de nacimeinto</label>
                     <div class="input-group has-validation">
                       <span class="btn btn-light input-group-text" >
@@ -1327,6 +1318,19 @@
                       
                     </div>
                   </div>
+                <div class="col-md-12 position-relative">
+                    <label class="form-label">Apellidos Nombres</label>
+                    <div class="input-group has-validation">
+                      <span class="btn btn-light input-group-text" ><svg class="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                      </svg></span>
+                        <input type="text"  onkeypress="return soloLetras(event)" class="form-control" id="nombres_apelli" name="nombres_apelli" required>
+                      
+                      
+                    </div>
+                  </div>
+                  
     
                   <div class="col-md-6 position-relative">
                     <label for="validationTooltipemail" class="form-label">Correo</label>
@@ -1341,14 +1345,14 @@
                     <label for="validationTooltipUsername" class="form-label">Teléfono</label>
                     <div class="input-group has-validation">
                       <span class="btn btn-light input-group-text" id="inputGroupPrepend3">#</span>
-                       <input type="text" class="form-control" name="telefonos" id="telefonos"  aria-describedby="validationTooltipUsernamePrepend" required>
+                       <input type="text" class="form-control"  onkeypress="return solonumeros(event)" name="telefonos" id="telefonos"  aria-describedby="validationTooltipUsernamePrepend" required>
                       
                     </div>
                   </div>
                 <div class="col-md-6 d-none position-relative">
                   
                   <label  class="form-label">Banco</label>
-                  <input type="text" class="form-control" name="bancos" id="bancos" required/>
+                  <input type="text" class="form-control" name="bancos" id="bancos" value="null" />
                   
                   
                 </div>               
@@ -1356,14 +1360,14 @@
                   <label  class="form-label"># de comprobante</label>
                   <div class="input-group has-validation">
                     <span class="btn btn-light input-group-text" id="">#</span>
-                    <input type="text" class="form-control" name="comprobantes" id="comprobantes" required>
+                    <input type="text" class="form-control" name="comprobantes" id="comprobantes" valu="null">
                   </div>
                 </div>  
                 <div class="d-none">
                   <input class="d-none" type="text" disabled name="formulario" id="formulario" required>
                 </div>            
                 <div class="row p-3 d-flex justify-content-center m-1">
-                  <a class=" close col-4 m-1 btn btn-outline-danger" >Cancelar</a>
+                  <a class=" cerrar col-4 m-1 btn btn-outline-danger" >Cancelar</a>
                   <button class="col-4 m-1  btn btn-outline-success" id="tc" type="submit">Reportar Pago</button>                
                 </div>                
               </form>
