@@ -154,7 +154,7 @@ function solonumeros(e) {
 }
 
 function cronometro(e) {
-
+  $('#carritocoompra').modal('toggle', { backdrop: false, keyboard: false });
   display = document.querySelector('#cronometro')
   var tiempo = 60 * 9.50
   var timer = tiempo, minutos = 0, segundos = 0;
@@ -178,5 +178,6 @@ function cronometro(e) {
 
 }
 function stoptimer() {
+  $('#carritocoompra').modal('toggle', { backdrop: false, keyboard: false });
   clearInterval(data);
 }

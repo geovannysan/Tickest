@@ -180,6 +180,8 @@ $('.cerrar').click(function () {
   $('#Modaltarjeta').modal('hide')
 })
 function reprtcompro(e) {
+  //$('#depositoModal').modal('toggle')
+  //depositoModal
   document.getElementById('names').value = ''
   document.getElementById('ce_dni').value = ''
   document.getElementById('mail').value = ''
