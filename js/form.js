@@ -96,6 +96,7 @@ const validacedula = async (e) => {
   const numero = document.getElementById(e).value;
   if (!numero) return
   $('.spinner-border').removeClass('d-none')
+  $(".spinner").attr("disabled", true);
   $('.search').addClass('d-none')
   try {
     const { data } = await axios.get("https://rec.netbot.ec/pdfqr/api/v1/cedula/" + numero)
@@ -110,14 +111,17 @@ const validacedula = async (e) => {
     document.getElementById('names').value = nombres
     $('.search').removeClass('d-none')
     $('.spinner-border').addClass('d-none')
+    $(".spinner").attr("disabled", false);
     if (!nombres) {
       Swal.fire('', 'Cédula no registrada', 'warning')
       $('.search').removeClass('d-none')
       $('.spinner-border').addClass('d-none')
+      $(".spinner").attr("disabled", false);
     }
   } catch (Error) {
     $('.search').removeClass('d-none')
     $('.spinner-border').addClass('d-none')
+    $(".spinner-border").attr("disabled", false);
     Swal.fire(
       'Hubo un error',
       '' + Error,

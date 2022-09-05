@@ -17,3 +17,20 @@
     transform: rotate(360deg);
   }
 }
+
+.modal-lg {
+  max-width: 80% !important;
+}
+
+table {
+  width: 100%;
+}
+
+table.vertical-align>tbody>tr>td {
+  display: flex;
+  align-items: center;
+}
+
+.comp {
+  background-color: rgba(125, 128, 131, 0.897) !important;
+}

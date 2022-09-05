@@ -1,8 +1,8 @@
-
 const valida = async (e) => {
   const num = document.getElementById(e).value
   if (!num) return
   $('#spinner').find('span').removeClass('d-none')
+  $("#spinner").attr("disabled", true);
   $('#search').addClass('d-none')
   try {
     const { data } = await axios.get("https://rec.netbot.ec/pdfqr/api/v1/cedula/" + num)
@@ -17,14 +17,17 @@ const valida = async (e) => {
     document.getElementById('nombres_apelli').value = nombres
     $('#spinner').find('span').addClass('d-none')
     $('#search').removeClass('d-none')
+    $("#spinner").attr("disabled", false);
     if (!nombres) {
       Swal.fire('', 'Cédula no registrada', 'warning')
       $('#spinner').find('span').addClass('d-none')
       $('#search').removeClass('d-none')
+      $("#spinner").attr("disabled", false);
     }
   } catch (Error) {
     $('#spinner').find('span').addClass('d-none')
     $('#search').removeClass('d-none')
+    $("#spinner").attr("disabled", false);
     Swal.fire(
       'Hubo un error',
       'Cédula inválida',
@@ -148,4 +151,32 @@ function solonumeros(e) {
   if (letras.indexOf(tecla) == -1 && !tecla_especial)
 
     return false;
+}
+
+function cronometro(e) {
+
+  display = document.querySelector('#cronometro')
+  var tiempo = 60 * 9.50
+  var timer = tiempo, minutos = 0, segundos = 0;
+
+
+  data = setInterval(function () {
+    minutos = parseInt(timer / 60, 10);
+    segundos = parseInt(timer % 60, 10);
+
+    minutos = minutos < 10 ? "0" + minutos : minutos;
+    segundos = segundos < 10 ? "0" + segundos : segundos;
+
+    //console.log(minutes + ":" + seconds)
+    display.textContent = minutos + ":" + segundos;
+
+    if (--timer < 0) {
+      timer = tiempo;
+    }
+  }, 1000);
+  data()
+
+}
+function stoptimer() {
+  clearInterval(data);
 }
