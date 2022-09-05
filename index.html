@@ -49,7 +49,7 @@
   <nav class="navbar navbar-expand-lg justify-content-between navbar-dark bg-black fixed-top py-3">
     <div class="container-fluid col-lg-7    d-flex justify-content-between">
       <a class="navbar-brand " aria-label="TICKETS" href="#">
-        <img src="img/logo-tickets.png" class="img-fluid" style="height: 50px" alt="">
+        <img src="img/logo_Flash.png" class="img-fluid" style="height: 50px" alt="">
       </a>
       <button class="navbar-toggler justify-content-end " type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -223,10 +223,11 @@
                     <p style="font-size: 1.2em"><b>Fecha:</b><span id="fechaEvento">Viernes 10-09-2022</span></p>
                     <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
                     <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
-                    <p href="#" class="evento btn btn-primary fw-bold px-3 py-2 rounded-6" id="comprar">Comprar Entrada
+                    <p                    
+                     onclick="cronometro('La ultima Mision 2K 2022')" class="evento btn btn-primary fw-bold px-3 py-2 rounded-6" id="comprar">Comprar Entrada
                     </p>
-                    <p href="#"  onclick="cronometro('inicio')"
-                      class="float-end btn btn-info fw-bold px-3 py-2 rounded-6 text-white">
+                    <p href="#"  onclick="cronometro('La ultima Mision 2K 2022')"
+                      class="d-none float-end btn btn-info fw-bold px-3 py-2 rounded-6 text-white">
                       Carrito</p>
                   </div>
                   <!--Lista de metos de pagos-->
@@ -318,6 +319,9 @@
                       <div>
                       </div>
                     </div>
+                  </div>
+                  <div class="container  d-none p-3 ">
+                    <button class="back btn btn-outline-danger align-self-end float-right">Regresar</button>
                   </div>
 
                   <div class=" deposito container text-center d-none">
@@ -420,7 +424,7 @@
                     <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento">Coliseo Voltaire Paladines
                         Polo</span></p>
                     <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 21:00</span></p>
-                    <p class="evento btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</p>
+                    <p onclick="cronometro('Grupo Pimpinela 28-10-2022')" class="evento btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</p>
                   </div>
                   <!--Lista de opciones de pago-->
                   <div class="container list-group  list-group-flush d-none  border-top-0 ">
@@ -597,7 +601,7 @@
                     <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento">Coliseo Jefferson Perez Quezada
                       </span></p>
                     <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 20:00</span></p>
-                    <p class="evento btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</p>
+                    <p  onclick="cronometro('Grupo Pimpinela 29-10-2022')" class="evento btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</p>
                   </div>
                   <!--Lista de metos de pagos-->
                   <div class="container list-group  list-group-flush d-none  border-top-0 ">
@@ -1074,8 +1078,9 @@
         <div class="modal-footer">
 
           <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-outline-success" data-toggle="modal" data-toggle="modal"
-            data-dismiss="modal" data-target="#reporteModalfi">Reportar Pago</button>
+          <button type="button" id="reporte-deposito" class=" btn btn-outline-success" 
+          data-backdrop="static" data-keyboard="false" data-toggle="modal" 
+            data-dismiss="modal"  data-target="#reporteModalfi" onclick="deposito()">Reportar Pago</button>
         </div>
       </div>
     </div>
@@ -1244,7 +1249,7 @@
     </div>
   </div>
   <!--Modal Reportar deposito -->
-  <div class="modal fade  " id="reporteModalfi" tabindex="-1" role="dialog" aria-labelledby="reporteModalLabel"
+  <div class="modal fade  " id="reporteModalfi" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="reporteModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " role="document">
       <div class="modal-content">
@@ -1384,7 +1389,9 @@
           <div class="col-lg-8 p-0">
             <div class="row ">
               <div class="col-7 align-self-center text-center">
+                <p class="d-none" id="evento"></p>
                 <p style="font-size: 0.8em;">SELECCIONE LAS ENTRADAS POR LOCALIDAD</h6>
+                 
               </div>
               <div class="col-sm d-flex flex-column align-self-center text-center align-items-stretch ">
                 <div style="font-size: 0.7em;">
@@ -1398,7 +1405,7 @@
                 </div>
               </div>
             </div>
-            <div class="table-responsive p-0">
+            <div class="tabla-selecion table-responsive p-0">
               <table class="table table-striped vertical-align px-0" width="100%">
                 <thead class="bg-secondary">
                   <tr>
@@ -1437,8 +1444,9 @@
                     </td>
                     <td class="align-self-center">$20</td>
                     <td class="align-self-center text-center">
-                      <button class="btn btn-sm btn-rounded " style="background-color:rgb(253, 253, 249) ;">SELECCIONE
-                        ASIENTO</button>
+                       <span class="badge badge-secondary">ASIENTO</span>
+                      <!--<button class="btn btn-sm btn-rounded " style="background-color:rgb(253, 253, 249) ;">SELECCIONE
+                        ASIENTO</button>-->
                     </td>
                     <td class="align-self-center">SILLAS NUMERADA</td>
                   </tr>
@@ -1563,7 +1571,7 @@
             <div class="d-none d-sm-none d-md-block">
               <div class="row d-flex pt-4 ">
                 <div class="col-6  d-flex" style="height: 70px;">
-                  <img class="bg-black" src="img/logo-flashthetickets.png" alt="">
+                  <img class="bg-black" src="img/logo-tickets.png" alt="">
                 </div>
                 <div class="col-6  d-flex justify-content-end" style="height: 70px;">
                   <img src="img/credit_card.png" alt="">
@@ -1618,7 +1626,7 @@
                   <h4>Puede pagar con:</h4>
                 </div>
                 <div class="d-flex ">
-                  <img style="height: 70px; width: 70%;" src="img/tarjetas-de-credito-logos-png.png" alt="">
+                  <img style="height: 20px; " src="img/todas-tc.png" alt="">
                 </div>
               </div>
             </div>
@@ -1632,6 +1640,114 @@
       </div>
     </div>
   </div>
+  <!--Modal metodos de pago-->
+  <div class="modal fade" id="metodos-pago" tabindex="-1" role="dialog" aria-labelledby="metodos-pagoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h5 class="modal-title" id="metodos-pagoModalLabel"></h5>
+          
+        </div>
+        
+            <div class="container px-3 list-group  list-group-flush   border-top-0 ">
+                <h3 class="borderless p-2 pb-0 text-center">Métodos de pagos</h3>
+                <hr class="mt-0 ">
+                <a class="efectivo list-group-item list-group-item-action " href="#!" id="list-efectivo-list">
+                  <i class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cash-coin" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" />
+                      <path
+                        d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z" />
+                      <path
+                        d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z" />
+                      <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z" />
+                    </svg>
+                  </i>
+                  Efectivo</a>
+                <a class="deposito list-group-item list-group-item-action" id="list-deposito-list"
+                data-backdrop="static" data-toggle="modal" data-target="#depositoModal" href="#deposito"
+                  onclick="">
+                  <i class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-bank2" viewBox="0 0 16 16">
+                      <path
+                        d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z" />
+                    </svg>
+                  </i>
+
+                  Depósito/Transferencia
+
+                </a>
+                <a class="payphone list-group-item list-group-item-action" target="_blank"
+                  href="#!" style="z-index: 1;"
+                  target="_top" id="list-paypal-list" href="#!">
+                  <i class="fas fa-dollar-sign"></i>
+                  Payphone
+                  <img src="img/visa.png" style="z-index: -1;">
+                </a>
+                <a class="tarjeta list-group-item  list-group-item-action" id="list-tarjeta-list"
+                data-dismiss="modal">
+                  <i class="fa fa-credit-card"></i>
+                  TC / TD
+                  <img src="img/todas-tc.png" style="height: 22px;" alt="">
+                </a>
+              </div>
+              <div class="efectivo container  d-none">
+                <div class="row">
+                  <div class="col-12  p-0">
+                    <h4 style="font-size: 1.4em">Compra en efectivo:
+                    </h4>
+                    <h6 style="font-size: 1.0em;">
+                      <a href="https://www.google.com/maps/place/Mall+del+Sol/@-2.1552256,-79.8926919,15z/data=!4m2!3m1!1s0x0:0xd274a80c859ce020?sa=X&ved=2ahUKEwi-kd7cs_T5AhXSZTABHUHGBu0Q_BJ6BAhlEAU"
+                        target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                          <path
+                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg></a><strong>C.C. Mall del Sol</strong>
+                    </h6>
+                    <p style="font-size: 0.8em;">
+                      Segunda planta, diagonal a FOREVER 21</p>
+
+                    <h6 style=" font-size: 1.0em;">
+                      <a href="#!"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                          <path
+                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg></a>
+                      <strong>Hiperfarmacias </strong>
+                    </h6>
+                    <h6 style=" font-size: 1.0em;">
+                      <a href="#!"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                          <path
+                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg></a>
+                      <strong>D´Mujer </strong>
+                    </h6>
+                    <p style="font-size: 1.1em;">Información: 0983832112</p>
+
+                  </div>
+                  <div>
+                  </div>
+                </div>
+              </div>
+              <div class="container  d-none p-3 ">
+                <button class="back btn btn-outline-danger align-self-end float-right">Regresar</button>
+              </div>
+
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>         
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---->
   <!--resumen de compra-->
   <div class="modal fade" id="detallecomp" tabindex="-1" role="dialog" aria-labelledby="detallecomp" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1643,7 +1759,7 @@
               <h3>Resumen de compra</h3>
             </div>
             <div class="col-12 col-lg-6 d-flex justify-content-end">
-              <button class="btn  btn-primary">CANCLAR COMPRA</button>
+              <button class="btn  btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#carritocoompra" onclick="regresar()" >CANCELAR COMPRA</button>
             </div>
           </div>
           <div class="row container-fluid">
@@ -1653,16 +1769,16 @@
               <div class="col-12 border border-bottom mb-3"></div>
 
               <span>Cliente:</span>
-              <samp>CARLOS HUMBERTO TAPIA LOOR </samp>
+              <samp id="nombre-resumen">CARLOS HUMBERTO TAPIA LOOR </samp>
               <div class="col-12 border border-bottom mb-3"></div>
             </div>
             <div class="col-6 col-sm-6 d-flex flex-column">
               <span>Forma de envío:</span>
               <div>
-                <select class="form-control-sm"  required aria-label="select "
+                <select class="form-control-sm" required aria-label="select "
                   id="banconom">
 
-                  <option selected value="1">correo electronico</option>
+                  <option selected value="1">correo electrónico</option>
                   <option  value="2">Whastapp</option>
                 </select>
               </div>
@@ -1670,7 +1786,7 @@
               <div class="col-12 border border-bottom mb-3"></div>
 
               <span>Identificador</span>
-              <samp>0975256478</samp>
+              <samp id="dni-resumen">0975256478</samp>
               <div class="col-12 border border-bottom mb-3"></div>
             </div>
           </div>
@@ -1678,6 +1794,7 @@
             <table class="resumen-table table table-striped">
               <thead>
                 <tr>
+                  
                   <th scope="col">CONCIENTO</th>
                   <th scope="col">LOCALIDAD</th>
                   <th scope="col">FILA</th>
@@ -1687,6 +1804,7 @@
               </thead>
               <tbody>
                 <tr>
+                  
                   <td scope="row">CARLOS VIVES GUAYAQUIL</td>
                   <td>VIP-PIPINELA</td>
                   <td>F1</td>
@@ -1718,52 +1836,51 @@
             </div>
             <div class="col-6 col-lg-2  text-end align-items-end flex-column ">
               <div class="container ">
-                <h4>$280.00</h4>
+                <h4 class="subtotal"></h4>
               </div>
               <div class="container-fluid">
-                <h4 class="text-end">$6.00</h4>
+                <h4 class="comision-boleto text-end">$6.00</h4>
               </div>
               <div class="container  ">
-                <h4>$286.00</h4>
+                <h4 class="total-text"></h4>
               </div>
 
             </div>
 
           </div>
           <div class="row pb-3">
-            <div class="col-12 col-lg-9 text-end d-flex flex-column  ">
+            <div class="col-12 col-lg-10 text-end d-flex flex-column  ">
               <div class="d-flex text-end  flex-wrap-reverse">
                 <div class="col-10 text-end">
-                  Acepto los <strong>Términos y condiciones</strong> emitidas por FlahsTheTikest
+                 <p style="font-size: 0.7em;">Acepto los <strong>Términos y condiciones</strong> emitidas por FlahsTheTikest</p> 
                 </div>
                 <div class="px-3">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <input class="form-check-input terminoscheck" id="termino-acep" type="checkbox" value="">
                 </div>
 
               </div>
 
               <div class="d-flex text-end  flex-wrap-reverse">
                 <div class="col-10 d-flex text-end">
-                  <h4 style="font-size: 1.0em;">
+                  <p style="font-size: 0.7em;">
                     Acepto que para canjear los tickets, debo presentar la tarjeta con la que fue
                     realizada la compra , caso contrario no podra retirar los boletos duros sin opcion a
                     rembolso
-                  </h4>
+                  </p>
                 </div>
                 <div class="px-3">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <input class="form-check-input terminoscheck" id="termino-bole" type="checkbox" value="" >
                 </div>
 
               </div>
 
             </div>
-            <div class="col-12 col-lg-3 text-center justify-content-center align-items-end flex-column ">
-              <div class=" ">
-                <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-                  data-target="#tarjetaModalLabel">
+            <div class="col-12 col-lg-2 text-center align-items-end ">
+              
+                <button class="btn btn-primary" data-dismiss="modal" onclick="pagar()">
                   <i class="fa fa-credit-card p-1"> </i>PAGAR
                 </button>
-              </div>
+              
 
 
             </div>
@@ -1789,8 +1906,9 @@
   <script src="js/form.js"></script>
   <script src="js/reportes.js"></script>
   <script src="js/carrito.js"></script>
+  <script src="js/modalshow.js"></script>
   <script type="text/javascript">
-    const pushbar = new Pushbar({
+   const pushbar = new Pushbar({
       blur: true,
       overlay: true,
     });

@@ -16,7 +16,7 @@
     })
 })()
 
-const container = document.querySelectorAll('p.evento');
+/*const container = document.querySelectorAll('p.evento');
 container.forEach(c => {
   c.addEventListener('click', (e) => {
     if (!e.target.localName == "p") {
@@ -34,37 +34,28 @@ container.forEach(c => {
       e.path[2].children[6].classList.toggle("d-none");
     }
   })
-});
+});*/
 
 
 const link = document.querySelectorAll('a')
 link.forEach(c => (c.addEventListener('click', (e) => {
 
-  if (e.target.getAttribute('class').split(" ")[0] == "efectivo") {
-    e.path[2].children[1].classList.toggle("d-none");
-
-    e.path[2].children[2].classList.toggle("d-none");
-    e.path[2].children[7].classList.add("d-none");
-    // e.path[2].children[7].classList.toggle("d-none");
+  if (e.target.getAttribute('class').split(" ")[0] == "efectivo") {   
 
   }
-  /*if (e.target.getAttribute('class').split(" ")[0] == "payphone") {
-    // e.path[2].children[1].classList.toggle("d-none");
-
-    // e.path[2].children[4].classList.toggle("d-none");
-    // e.path[2].children[6].classList.add("d-none");
-    //e.path[2].children[7].classList.toggle("d-none");
+  if (e.target.getAttribute('class').split(" ")[0] == "payphone") {   
 
   }
-  if (e.target.getAttribute('class').split(" ")[0] == "tarjeta") {
-    /*e.path[2].children[1].classList.toggle("d-none");
-  
-     e.path[2].children[5].classList.toggle("d-none");
-     e.path[2].children[6].classList.add("d-none");
-   e.path[2].children[7].classList.toggle("d-none");
-    return
+  if (e.target.getAttribute('class').split(" ")[0] == "tarjeta") { 
+    $('#tarjetaModalLabel').modal('show')
+    $('#metodos-pago').modal('hide')
+   
+  }
+  if (e.target.getAttribute('class').split(" ")[0] == "deposito") {
+    $('#depositoModal').modal('show',{backdrop:false})
+    $('#metodos-pago').modal('hide')
 
-  }*/
+  }
 })))
 const div = document.querySelectorAll('.back')
 const cancelar = document.querySelectorAll('.cancelar')
@@ -180,8 +171,6 @@ $('.cerrar').click(function () {
   $('#Modaltarjeta').modal('hide')
 })
 function reprtcompro(e) {
-  //$('#depositoModal').modal('toggle')
-  //depositoModal
   document.getElementById('names').value = ''
   document.getElementById('ce_dni').value = ''
   document.getElementById('mail').value = ''
