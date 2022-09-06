@@ -13,13 +13,21 @@ $(document).on('click', '.asientos', function (event) {
     var localidad = $(this).parents("tr").find("td p")[0].innerHTML;
     var valor = $(this).parents("tr").find("td")[1].innerHTML.replace("$", "");
     
+    var info = $(this).parents("tr").find("td div  input")[2];
+    console.log(event)
     var filas2 =  "<tr><td class='localidad'style='font-size: 0.8em;'>"+localidad+"</td>"
     filas2 = filas2 + "<td class='fila'style='font-size: 0.8em;'>f1</td>"
     filas2 = filas2 + "<td class='asiento'style='font-size: 0.8em;'>1</td>"
-    filas2 = filas2 + "<td class='total'style='font-size: 0.8em;'>"+valor+"</td>"
+    filas2 = filas2 + "<td class='total'style='font-size: 0.8em;'>$"+valor+"</td>"
     filas2= filas2 + "<td ><button class='btn btn-primary badge text-bg-primary borrar'>ELIMINAR</button></td></tr>"
     $('.detalles-resumen>tbody').append(filas2)
     console.log(localidad,valor)
+    let subtotal = 0;
+    document.querySelectorAll('.detalles-resumen tbody tr').forEach(function (e) {
+        var valor = e.querySelector('.total').innerText.replace("$", "")
+        subtotal += parseFloat(valor)        
+    });
+    $('.total-detalle').text("$"+subtotal)
 });
 $(document).ready(function() { 
    

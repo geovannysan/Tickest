@@ -40,6 +40,7 @@ tarjeta.addEventListener('click', async function (event){
     "difiere":$('#diferir').val(),
     "detalle":detalle_de_compra  
 }
+console.log(compre)
 Swal.fire('Transacción Guardad','retire su boleto con su tarjeta','success')
     
 })
