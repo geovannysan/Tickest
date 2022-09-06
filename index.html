@@ -237,7 +237,7 @@
                     <p style="font-size: 1.2em"><b>Lugar:</b><span id="lugarEvento"> Estadio Alberto Spencer</span></p>
                     <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 22:30</span></p>
                     <p href="#" data-toggle="modal" data-target="#carritocoompra" data-backdrop="static"
-                      data-keyboard="false" onclick="cronometro('La ultima Mision 2K 2022')"
+                      data-keyboard="false" onclick="cronometro('La ultima Mision 2K 2022','La ultima Mision')"
                       class="btn btn-primary fw-bold px-3 py-2 rounded-6">
                       Comprar Entrada</p>
 
@@ -437,7 +437,7 @@
                         Polo</span></p>
                     <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 21:00</span></p>
                     <p data-toggle="modal" data-target="#carritocoompra" data-backdrop="static" data-keyboard="false"
-                      onclick="cronometro('Grupo Pimpinela 28-10-2022')"
+                      onclick="cronometro('Grupo Pimpinela 28-10-2022','Pimpinela')"
                       class="evento btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</p>
                   </div>
                   <!--Lista de opciones de pago-->
@@ -616,7 +616,7 @@
                       </span></p>
                     <p style="font-size: 1.2em"><b>Hora:</b><span id="horaEvento"> 20:00</span></p>
                     <p data-toggle="modal" data-target="#carritocoompra" data-backdrop="static" data-keyboard="false"
-                      onclick="cronometro('Grupo Pimpinela 29-10-2022')"
+                      onclick="cronometro('Grupo Pimpinela 29-10-2022','Pimpinela')"
                       class="evento btn btn-primary fw-bold px-3 py-2 rounded-6">Comprar Entrada</p>
                   </div>
                   <!--Lista de metos de pagos-->
@@ -1064,9 +1064,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Realiza tu Depósito </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-          </button>
+          </button>-->
         </div>
         <div class="modal-body">
           <div class="row container">
@@ -1155,8 +1155,8 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Reporta </h5>
           <button type="button" class="cerrar close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+           <!-- <span aria-hidden="true">&times;</span>
+          </button>-->
         </div>
         <div class="modal-body">
           <div class="container">
@@ -1272,9 +1272,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Reporta tu depósito </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-          </button>
+          </button>-->
         </div>
         <div class="modal-body">
           <div class="container">
@@ -1407,7 +1407,7 @@
           <div class="col-lg-8 p-0">
             <div class="row ">
               <div class="col-7 align-self-center text-center">
-                <p class="" id="evento"></p>
+                <p class="d-none" id="evento"></p>
                 <p style="font-size: 0.8em;">SELECCIONE LAS ENTRADAS POR LOCALIDAD</h6>
 
               </div>
@@ -1465,7 +1465,7 @@
                         <div class="rounded-3  px-2"
                           style="background-color: rgb(231, 134, 43); width: 30px; height: 20px;">
                         </div>
-                        <p class="px-2 " style="font-size: 0.8em;">VIP - PIMPINELA</p>
+                        <p class="px-2 " style="font-size: 0.8em;">VIP - PIMPINELA PALCO</p>
                       </div>
                     </td>
                     <td class="align-self-center">$20</td>
@@ -1505,9 +1505,9 @@
                 </tbody>
               </table>
             </div>
-            <div class=" table-responsive" style='position:relative;overflow:auto;height:auto;'>
-              <table class="detalles-resumen table table-striped " cellpadding="0" cellspacing="0" style="width:100%">
-                <thead class="bg-secondary" style="width: 100%;">
+            <div class=" table-responsive" >
+              <table class="detalles-resumen table table-striped display cell-border" style="width:100%"cellpadding="0">
+                <thead class="bg-secondary" >
                   <tr>
                     <th class=" text-center" scope="col">LOCALIDAD</th>
                     <th class=" text-center" scope="col">FILA</th>
@@ -1584,6 +1584,7 @@
           <div class="col-lg-4 p-0 d-flex justify-content-center align-items-center bg-black">
 
           </div>
+          
 
 
         </div>
@@ -1875,13 +1876,13 @@
                 <div class="col-md-12">
                   <label for="validationCustom01" class="form-label">Numero de la Tarjeta</label>
                   
-                  <input type="text" class="form-control" id="idcard" required>
+                  <input type="text" class="form-control" id="idcard" onkeypress="return solonumeros(event)" required>
              
                 </div>
                 <div class="col-md-12">
-                  <label for="validationCustom02" class="form-label">Numero de la Tarjeta</label>
+                  <label for="validationCustom02" class="form-label">Nombre del titular</label>
                   
-                  <input type="text" class="form-control" id="titular" required>
+                  <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="titular" required>
                   
                 </div>
                 <div class="col-12 col-md-6">
@@ -1893,7 +1894,7 @@
                 </div>
                 <div class="cl-6 col-md-3">
                   <label for="validationCustom03" class="form-label">CVD</label>
-                  <input type="text" class="form-control" id="codigo" required>
+                  <input type="text" onkeypress="return solonumeros(event)"  class="form-control" id="codigo" required>
                   
                 </div>
                

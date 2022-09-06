@@ -11,24 +11,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--boostrap-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet'>
-    <!---->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet'>
+  <!---->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
-    <title>T-ickets | Compra tu boleto</title>
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <!--pusher-->
-    <script src="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.css">
+  <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+  <title>T-ickets | Compra tu boleto</title>
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <!--pusher-->
+  <script src="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.css">
+
+
+  <!--  load DataTables  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+    integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!--CSS-->
     <link rel="stylesheet" href="css/styles.css">
@@ -113,132 +119,199 @@
     <div class="container " id="nuevoseventos">
 
         <div class="container-fluid p-3 ">
-            <div class="container flex-wrap-reverse justify-content-center  rounded-7 shadow-md" style="height: auto ;">
-                <div class="row p-4 ">
-                    <div class="col-12 col-lg-6">
-                        <h3>Resumen de compra</h3>
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                  <div class="row ">
+                    <div class="col-7 align-self-center text-center">
+                      <p class="" id="evento"></p>
+                      <p style="font-size: 0.8em;">SELECCIONE LAS ENTRADAS POR LOCALIDAD</h6>
+      
                     </div>
-                    <div class="col-12 col-lg-6 d-flex justify-content-end">
-                        <button class="btn  btn-primary">CANCLAR COMPRA</button>
+                    <div class="col-sm d-flex flex-column align-self-center text-center align-items-stretch ">
+                      <div style="font-size: 0.7em;">
+                        TIEMPO PARA COMPRA
+                      </div>
+                      <div class="text-danger " id="cronometro" style="font-size: 1.2em;">
+      
+                      </div>
+                      <div style="font-size: 0.7em;">
+                        MINUTOS SEGUNDOS
+                      </div>
                     </div>
-                </div>
-                <div class="row container-fluid">
-                    <div class="col-6 col-sm-6 d-flex flex-column">
-                        <span>Forma de Pago:</span>
-                        <samp>TARJETA DE CREDITO</samp>
-                        <div class="col-12 border border-bottom mb-3"></div>
-
-                        <span>Cliente:</span>
-                        <samp>CARLOS HUMBERTO TAPIA LOOR </samp>
-                        <div class="col-12 border border-bottom mb-3"></div>
-                    </div>
-                    <div class="col-6 col-sm-6 d-flex flex-column">
-                        <span>Forma de envío:</span>
-                        <samp style="font-size: 1.0em;">Correo electrónico
-                            /Whastpp</samp>
-                        <div class="col-12 border border-bottom mb-3"></div>
-
-                        <span>Identificador</span>
-                        <samp>0975256478</samp>
-                        <div class="col-12 border border-bottom mb-3"></div>
-                    </div>
-                </div>
-                <div class="container table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">CONCIENTO</th>
-                                <th scope="col">LOCALIDAD</th>
-                                <th scope="col">FILA</th>
-                                <th scope="col">ASIENTO</th>
-                                <th scope="col">TOTAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td scope="row">CARLOS VIVES GUAYAQUIL</td>
-                                <td>VIP-PIPINELA</td>
-                                <td>F1</td>
-                                <td>66</td>
-                                <td>$140</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">CARLOS VIVES GUAYAQUIL</td>
-                                <td>VIP-PIPINELA</td>
-                                <td>F2</td>
-                                <td>66</td>
-                                <td>$140</td>
-                            </tr>
-                        </tbody>
+                  </div>
+                  <div class="tabla-selecion table-responsive p-0">
+                    <table class="localidades table table-striped vertical-align px-0" width="100%">
+                      <thead class="bg-secondary">
+                        <tr>
+                          <th class="text-center" scope="col">LOCALIDAD</th>
+                          <th class="text-center" scope="col">PRECIO</th>
+                          <th class="text-center" scope="col">CANTIDAD</th>
+                          <th class="text-center" scope="col">CARACTERISTICA</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center ">
+                        <tr>
+                          <td class="align-self-center">
+                            <div class="d-flex justify-content-center align-items-stretch">
+                              <div class="rounded-3 px-2" style="background-color: brown; width: 30px; height: 20px;">
+                              </div>
+                              <p class="px-2 " style="font-size: 0.8em;">GENERAL NORTE</p>
+                            </div>
+                          </td>
+                          <td class="align-self-center">$20</td>
+                          <td class="align-self-center text-center">
+                            <div class="input-group">
+                              <p class="resta input-group-text btn"><i class="fa fa-minus"></i></p>
+                              <input size="3" type="text" onkeypress="return solonumeros(event)" value="1"  class="form-control form-control-sm"
+                                aria-label="Amount (to the nearest dollar)">
+                              <p class="suma input-group-text btn"><i class="fa fa-plus"></i></p>
+                            </div>
+                            <!--<div style="width: 70px;">
+      
+                              <input class="form-control" min="1" value="1" id="ex1" type="number" style="font-size: 0.8em;">
+                            </div>-->
+                          </td>
+                          <td class="align-self-center">
+                            <p class="px-2 " style="font-size: 0.8em;">GRADAS NO NUMERADO</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-self-center">
+                            <div class="d-flex justify-content-center align-items-stretch">
+                              <div class="rounded-3  px-2"
+                                style="background-color: rgb(231, 134, 43); width: 30px; height: 20px;">
+                              </div>
+                              <p class="px-2 " style="font-size: 0.8em;">VIP - PIMPINELA</p>
+                            </div>
+                          </td>
+                          <td class="align-self-center">$20</td>
+                          <td class="align-self-center text-center">
+                            <button class="asientos btn-primary badge text-bg-primary  ">SELECCIONE ASIENTO</button>
+                            <!--<button class="btn btn-sm btn-rounded " style="background-color:rgb(253, 253, 249) ;">SELECCIONE
+                              ASIENTO</button>-->
+                          </td>
+                          <td class="align-self-center">
+                            <p class="px-2 " style="font-size: 0.8em;">SILLAS NUMERADA</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-self-center">
+                            <div class="d-flex justify-content-center align-items-stretch">
+                              <div class="rounded-3  px-2"
+                                style="background-color: rgba(248, 156, 95, 0.87); width: 30px; height: 20px;">
+                              </div>
+                              <p class="px-2 " style="font-size: 0.8em;">VIP - PIMPINELA</p>
+                            </div>
+                          </td>
+                          <td class="align-self-center">$20</td>
+                          <td class="align-self-center text-center">
+      
+                            <button class="asientos btn-primary badge text-bg-primary  ">SELECCIONE ASIENTO</button>
+                          </td>
+                          <td class="align-self-center">
+                            <p class="px-2 " style="font-size: 0.8em;">SILLAS NUMERADA</p>
+                          </td>
+                        </tr>
+      
+      
+      
+      
+      
+      
+                      </tbody>
                     </table>
-
+                  </div>
+                  <div class=" table-responsive" >
+                    <table class="detalles-resumen table table-striped display cell-border" style="width:100%"cellpadding="0">
+                      <thead class="bg-secondary" >
+                        <tr>
+                          <th class=" text-center" scope="col">LOCALIDAD</th>
+                          <th class=" text-center" scope="col">FILA</th>
+                          <th class=" text-center" scope="col">ASIENTO</th>
+                          <th class=" text-center" scope="col">TOTAL</th>
+                          <th class="text-center" scope="col">ACCION</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center ">
+                        <tr>
+                          <td class="localidad" style="font-size: 0.8em;"> VIP-PIMPINELA </td>
+                          <td class="fila" style="font-size: 0.8em;">F-1</td>
+                          <td class="asiento" style="font-size: 0.8em;">66</td>
+                          <td class="total" style="font-size: 0.8em;">$140</td>
+                          <td>
+      
+                            <button class="btn btn-primary badge text-bg-primary borrar">ELIMINAR</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="localidad" style="font-size: 0.8em;"> VIP-PIMPINELA </td>
+                          <td class="fila" style="font-size: 0.8em;">F-2</td>
+                          <td class="asiento" style="font-size: 0.8em;">66</td>
+                          <td class="total" style="font-size: 0.8em;">$140</td>
+                          <td>
+      
+                            <button class="btn btn-primary badge text-bg-primary borrar">ELIMINAR</button>
+                          </td>
+                        </tr>
+                        <tr>
+                            <td class="localidad" style="font-size: 0.8em;"> VIP-PIMPINELA </td>
+                            <td class="fila" style="font-size: 0.8em;">F-2</td>
+                            <td class="asiento" style="font-size: 0.8em;">66</td>
+                            <td class="total" style="font-size: 0.8em;">$140</td>
+                            <td>
+        
+                              <button class="btn btn-primary badge text-bg-primary borrar">ELIMINAR</button>
+                            </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="row justify-content-center bg-gray">
+                    <div class="col-6  d-flex  align-self-center justify-content-center">
+                      <h4>TOTAL A PAGAR</h4>
+                      <h4 class="px-1 total-detalle"> </h4>
+                    </div>
+                    <div class="col-sm d-flex flex-column align-items-end ">
+                      <div class="px-5">
+                        Método de pago
+                        <div class="form-check">
+                          <input class="v-check form-check-input" type="radio" name="flexRadioDefault" id="efectivo-tarj">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Efectivo
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="v-check form-check-input" type="radio" name="flexRadioDefault" id="chektarjeta">
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            Tarjeta
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="deposito-tarj" checked>
+                          <label class="form-check-label" for="flexRadioDefault3">
+                            Transferencia
+                          </label>
+                        </div>
+                      </div>
+      
+      
+                    </div>
+                    <div class="col-6 py-2 d-flex justify-content-center align-items-center">
+      
+      
+                      <p href="#" data-dismiss="modal" data-toggle="modal" data-target="#detallecomp" data-backdrop="static"
+                        data-keyboard="false" onclick="opciones()" class="btn btn-primary fw-bold px-3 py-2 rounded-6">
+                        CONTINUAR</p>
+                    </div>
+      
+      
+                  </div>
                 </div>
-                <div class="row p-4">
-                    <div class="col-6 col-lg-10 text-end d-flex align-items-end flex-column  ">
-                        <div>
-                            <h4>Subtotal:</h4>
-                        </div>
-                        <div>
-                            <p>Comision por Boleto:</p>
-                        </div>
-                        <div>
-                            <h4>Total:</h4>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-2 text-end align-items-end flex-column ">
-                        <div class="container ">
-                            <h4>$280.00</h4>
-                        </div>
-                        <div class="container-fluid bg-secondary  ">
-                            <h4 class="text-end">$6.00</h4>
-                        </div>
-                        <div class="container  ">
-                            <h4>$286.00</h4>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="row pb-3">
-                    <div class="col-12 col-lg-9 text-end d-flex flex-column  ">
-                        <div class="d-flex text-end  flex-wrap-reverse">
-                            <div class="col-10 text-end">
-                                Acepto los <strong>Términos y condiciones</strong> emitidas por FlahsTheTikest
-                            </div>
-                            <div class="px-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            </div>
-
-                        </div>
-
-                        <div class="d-flex text-end  flex-wrap-reverse">
-                            <div class="col-10 d-flex text-end">
-                                <h4 style="font-size: 1.0em;">
-                                    Acepto que para canjear los tickets, debo presentar latarjeta con la que fue
-                                    realizada la compra , caso contrario no podra retirar los boletos duros sin opcion a
-                                    rembolso
-                                </h4>
-                            </div>
-                            <div class="px-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="col-12 col-lg-3 text-center justify-content-center align-items-end flex-column ">
-                        <div class=" ">
-                            <button class="btn btn-primary">
-                                <i class="fa fa-credit-card p-1"> </i>PAGAR
-                            </button>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
+                
+                
+      
+      
+              </div>
         </div>
     </div>
 
@@ -328,10 +401,14 @@
     <!--Fin proyecto-->
     <!--Js-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script type="text/javascript">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/reportes.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/modalshow.js"></script>
+  <script src="js/tables.js"></script>
         const pushbar = new Pushbar({
             blur: true,
             overlay: true,
