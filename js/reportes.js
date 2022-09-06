@@ -152,10 +152,9 @@ function solonumeros(e) {
 
     return false;
 }
-
+var data;
 function cronometro(e) {
   $('#evento').text(e)
-  $('#carritocoompra').modal('toggle', { backdrop: false, keyboard: false });
   display = document.querySelector('#cronometro')
   var tiempo = 60 * 9.50
   var timer = tiempo, minutos = 0, segundos = 0;
@@ -173,12 +172,13 @@ function cronometro(e) {
 
     if (--timer < 0) {
       timer = tiempo;
-    }
+    } else if (minutos === 00 && segundos == 0) { clearInterval(data); }
+
   }, 1000);
-  data()
+
 
 }
 function stoptimer() {
-  $('#carritocoompra').modal('toggle', { backdrop: false, keyboard: false });
+  $('#carritocoompra').modal('hide');
   clearInterval(data);
 }

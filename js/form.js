@@ -40,19 +40,24 @@ container.forEach(c => {
 const link = document.querySelectorAll('a')
 link.forEach(c => (c.addEventListener('click', (e) => {
 
-  if (e.target.getAttribute('class').split(" ")[0] == "efectivo") {   
+  if (e.target.getAttribute('class').split(" ")[0] == "efectivo") {
+    console.log(e.path[2].children)
+    e.path[2].children[1].classList.toggle("d-none");
+    e.path[2].children[2].classList.toggle("d-none");
+    e.path[2].children[3].classList.toggle("d-none");
+
 
   }
-  if (e.target.getAttribute('class').split(" ")[0] == "payphone") {   
+  if (e.target.getAttribute('class').split(" ")[0] == "payphone") {
 
   }
-  if (e.target.getAttribute('class').split(" ")[0] == "tarjeta") { 
-    $('#tarjetaModalLabel').modal('show')
-    $('#metodos-pago').modal('hide')
-   
+  if (e.target.getAttribute('class').split(" ")[0] == "tarjeta") {
+    //$('#tarjetaModalLabel').modal('show')
+    //$('#metodos-pago').modal('hide')
+
   }
   if (e.target.getAttribute('class').split(" ")[0] == "deposito") {
-    $('#depositoModal').modal('show',{backdrop:false})
+    $('#depositoModal').modal('show', { backdrop: false })
     $('#metodos-pago').modal('hide')
 
   }
@@ -61,15 +66,9 @@ const div = document.querySelectorAll('.back')
 const cancelar = document.querySelectorAll('.cancelar')
 
 div.forEach(e => (e.addEventListener('click', (e) => {
-  e.path[2].children[0].classList.toggle("d-none");
-
-  e.path[2].children[1].classList.add("d-none");
+  e.path[2].children[1].classList.toggle("d-none");
   e.path[2].children[2].classList.add("d-none");
   e.path[2].children[3].classList.add("d-none");
-  e.path[2].children[4].classList.add("d-none");
-  e.path[2].children[5].classList.add("d-none");
-  e.path[2].children[6].classList.add("d-none");
-  e.path[2].children[7].classList.add("d-none");
 })))
 /*cancelar.forEach(e => (e.addEventListener('click', (e) => {
   e.path[2].children[1].classList.toggle("d-none");
