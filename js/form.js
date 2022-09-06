@@ -57,8 +57,8 @@ link.forEach(c => (c.addEventListener('click', (e) => {
 
   }
   if (e.target.getAttribute('class').split(" ")[0] == "deposito") {
-    $('#depositoModal').modal('show', { backdrop: false })
-    $('#metodos-pago').modal('hide')
+    //$('#depositoModal').modal('show', { backdrop: false })
+    //$('#metodos-pago').modal('hide')
 
   }
 })))

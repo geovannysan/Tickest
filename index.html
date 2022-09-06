@@ -1092,8 +1092,9 @@
 
         </div>
         <div class="modal-footer">
-
-          <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
+          
+          <button type="button" class="btn btn-outline-danger"  data-backdrop="static"
+          data-keyboard="false" data-toggle="modal" data-dismiss="modal" data-target="#metodos-pago">Cerrar</button>
           <button type="button" id="reporte-deposito" class=" btn btn-outline-success" data-backdrop="static"
             data-keyboard="false" data-toggle="modal" data-dismiss="modal" data-target="#reporteModalfi"
             onclick="deposito()">Reportar Pago</button>
@@ -1147,7 +1148,7 @@
   </div>
 
   <!--Modal tarjetas save -->
-  <div class="modal fade  " id="Modaltarjeta" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog"
+  <div class="modal fade  " id="Modaltarjeta"  tabindex="-1" role="dialog"
     aria-labelledby="reporteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered  " role="document">
       <div class="modal-content">
@@ -1265,7 +1266,7 @@
     </div>
   </div>
   <!--Modal Reportar deposito -->
-  <div class="modal fade  " id="reporteModalfi" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+  <div class="modal fade  " id="reporteModalfi" tabindex="-1" role="dialog"
     aria-labelledby="reporteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " role="document">
       <div class="modal-content">
@@ -1378,8 +1379,9 @@
               </div>
 
               <div class="row p-3 d-flex justify-content-center m-1">
-
-                <button class=" col-4 m-1 btn btn-outline-danger" id="cerrar" data-dismiss="modal">Cancelar</button>
+                 
+                <button class=" col-4 m-1 btn btn-outline-danger" id="cerrar" data-backdrop="static"
+                data-keyboard="false" data-toggle="modal" data-dismiss="modal" data-target="#depositoModal">Cancelar</button>
                 <button class="col-4 m-1  btn btn-outline-success" type="submit" id="td">Reportar Pago</button>
               </div>
             </form>
@@ -1422,7 +1424,7 @@
               </div>
             </div>
             <div class="tabla-selecion table-responsive p-0">
-              <table class="table table-striped vertical-align px-0" width="100%">
+              <table class="localidades table table-striped vertical-align px-0" width="100%">
                 <thead class="bg-secondary">
                   <tr>
                     <th class="text-center" scope="col">LOCALIDAD</th>
@@ -1443,10 +1445,10 @@
                     <td class="align-self-center">$20</td>
                     <td class="align-self-center text-center">
                       <div class="input-group">
-                        <p class=" input-group-text btn"><i class="fa fa-minus"></i></p>
-                        <input type="text" style="width: 10px ;" class="form-control form-control-sm"
+                        <p class="resta input-group-text btn"><i class="fa fa-minus"></i></p>
+                        <input type="text" onkeypress="return solonumeros(event)" value="1" style="width: 10px ;" class="form-control form-control-sm"
                           aria-label="Amount (to the nearest dollar)">
-                        <p class=" input-group-text btn"><i class="fa fa-plus"></i></p>
+                        <p class="suma input-group-text btn"><i class="fa fa-plus"></i></p>
                       </div>
                       <!--<div style="width: 70px;">
 
@@ -1503,9 +1505,9 @@
                 </tbody>
               </table>
             </div>
-            <div class=" table-responsive">
+            <div class=" table-responsive" style='position:relative;overflow:auto;height:auto;'>
               <table class="detalles-resumen table table-striped " cellpadding="0" cellspacing="0" style="width:100%">
-                <thead class="bg-secondary">
+                <thead class="bg-secondary" style="width: 100%;">
                   <tr>
                     <th class=" text-center" scope="col">LOCALIDAD</th>
                     <th class=" text-center" scope="col">FILA</th>
@@ -1516,23 +1518,23 @@
                 </thead>
                 <tbody class="text-center ">
                   <tr>
-                    <td class="localidad"> VIP-PIMPINELA </td>
-                    <td class="fila">F-1</td>
-                    <td class="asiento">66</td>
-                    <td class="total">$140</td>
+                    <td class="localidad" style="font-size: 0.8em;"> VIP-PIMPINELA </td>
+                    <td class="fila" style="font-size: 0.8em;">F-1</td>
+                    <td class="asiento" style="font-size: 0.8em;">66</td>
+                    <td class="total" style="font-size: 0.8em;">$140</td>
                     <td>
 
-                      <button class="btn btn-light btn-sm borrar">ELIMINAR</button>
+                      <button class="btn btn-primary badge text-bg-primary borrar">ELIMINAR</button>
                     </td>
                   </tr>
                   <tr>
-                    <td class="localidad"> VIP-PIMPINELA </td>
-                    <td class="fila">F-2</td>
-                    <td class="asiento">66</td>
-                    <td class="total">$140</td>
+                    <td class="localidad" style="font-size: 0.8em;"> VIP-PIMPINELA </td>
+                    <td class="fila" style="font-size: 0.8em;">F-2</td>
+                    <td class="asiento" style="font-size: 0.8em;">66</td>
+                    <td class="total" style="font-size: 0.8em;">$140</td>
                     <td>
 
-                      <button class="btn btn-light btn-sm borrar">ELIMINAR</button>
+                      <button class="btn btn-primary badge text-bg-primary borrar">ELIMINAR</button>
                     </td>
                   </tr>
                 </tbody>
@@ -1622,9 +1624,9 @@
             <div class="col-6 col-sm-6 d-flex flex-column">
               <span>Forma de envío:</span>
               <div>
-                <select class="form-control-sm" required aria-label="select " id="banconom">
+                <select class="form-control-sm" required aria-label="select " id="envio-resumen">
 
-                  <option selected value="1">correo electrónico</option>
+                  <option selected value="1">Correo electrónico</option>
                   <option value="2">Whastapp</option>
                 </select>
               </div>
@@ -1654,7 +1656,7 @@
                   <td scope="row">CARLOS VIVES GUAYAQUIL</td>
                   <td class="localidad">VIP-PIPINELA</td>
                   <td class="filla">F1</td>
-                  <td class="cantidad">66</td>
+                  <td class="asiento">66</td>
                   <td class="total">$140</td>
                 </tr>
                 <tr>
@@ -1724,7 +1726,7 @@
             </div>
             <div class="col-12 col-lg-2 text-center align-items-end ">
 
-              <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#metodos-pago"
+              <button id="pagarcuenta" class="btn btn-primary" disabled data-dismiss="modal" data-toggle="modal" data-target="#metodos-pago"
                 data-backdrop="static" data-keyboard="false" onclick="pagar()">
                 <i class="fa fa-credit-card p-1"> </i>PAGAR
               </button>
@@ -1767,7 +1769,7 @@
             </i>
             Efectivo</a>
           <a class="deposito list-group-item list-group-item-action" id="list-deposito-list" data-dismiss="modal"
-            data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#depositoModal"
+          data-backdrop="static" data-keyboard="false" data-toggle="modal"  data-target="#depositoModal"
             href="#deposito" onclick="">
             <i class="">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank2"
@@ -1869,45 +1871,60 @@
             </div>
 
             <div class="container-fluid ">
-              <form class="row px-0 needs-validation" novalidate>
-                <div class="col-12 col-md-12">
-                  <label class="form-label">Numero de la Tarjeta </label>
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-12">
+                  <label for="validationCustom01" class="form-label">Numero de la Tarjeta</label>
+                  
                   <input type="text" class="form-control" id="idcard" required>
-
+             
                 </div>
-                <div class="col-12 col-md-12">
-                  <label class="form-label">Nombre del Titular</label>
+                <div class="col-md-12">
+                  <label for="validationCustom02" class="form-label">Numero de la Tarjeta</label>
+                  
                   <input type="text" class="form-control" id="titular" required>
+                  
                 </div>
-
-
                 <div class="col-12 col-md-6">
-                  <label class="form-label"><label></label>Fecha de Expiracion</label>
-                  </label>
-                  <input type="text" class="form-control" id="fechaex" required>
-
+                  <label for="validationCustomUsername" class="form-label">Fecha de expiracion</label>
+                  <div class="input-group has-validation">
+                    
+                    <input type="text" class="form-control" id="fechaex" required>
+                  </div>
                 </div>
-                <div class="col-6 col-md-3">
-                  <label class="form-label">CVD</label>
+                <div class="cl-6 col-md-3">
+                  <label for="validationCustom03" class="form-label">CVD</label>
                   <input type="text" class="form-control" id="codigo" required>
-
+                  
                 </div>
-                <div class="col-6 col-md-3">
-                  <label class="form-label">Diferir</label>
-                  <label class="form-label"></label>
+               
+                <div class="col-md-3">
+                  <label for="validationCustom05" class="form-label">Diferir</label>
                   <select class="form-select" id="diferir" required>
-                    <option selected value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="2">2</option>
-                    <option value="2">2</option>
-                    <option value="2">2</option>
-                    <option value="2">2</option>
+                    <option selected value="1">1 mes</option>
+                    <option value="2">2 meses</option>
+                    <option value="3">3 meses</option>
+                    <option value="4">4 meses</option>
+                    <option value="5">5 meses</option>
+                    <option value="6">6 meses</option>
+                    <option value="7">7 meses</option>
+                    <option value="8">8 meses</option>
+                    <option value="9">9 meses</option>
+                    <option value="10">10 meses</option>
+                    <option value="11">11 meses</option>
+                    <option value="12">12 meses</option>
                   </select>
                 </div>
-                <div class="col-12 pt-3">
-                  <button class="btn btn-primary col-lg-6  float-end" type="button">PAGAR</button>
+               
+                <div class="col-12">
+                  <a class="btn btn-primary"data-dismiss="modal"
+                  data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#metodos-pago">Regresar</a>
+                
+
+                  <button class="tarjeta-credi btn btn-primary pagar-td float-end" id="pagar-td" type="submit">PAGAR</button>
                 </div>
               </form>
+               
+              
             </div>
             <div class="d-none d-sm-none d-md-block">
               <div class="p-2 d-flex  flex-column d-lg-block ">

@@ -7,8 +7,10 @@
         info: false,
         searching: false,
     });
-});/*
-$(document).ready(function () {
-    $('#detalle').DataTable();
-ordering: false,
+/*$('.localidades').DataTable({scrollCollapse: true,
+    paging: false,
+    scrollY: '50vh',"scrollX":true,
+    info: false,"autoWidth": true,
+    searching: false,});
 });*/
+

@@ -172,7 +172,7 @@ function cronometro(e) {
 
     if (--timer < 0) {
       timer = tiempo;
-    } else if (minutos === 00 && segundos == 0) { clearInterval(data); }
+    } else if (minutos === 00 && segundos == 00) { clearInterval(data); }
 
   }, 1000);
 
