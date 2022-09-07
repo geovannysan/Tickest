@@ -1092,9 +1092,9 @@
 
         </div>
         <div class="modal-footer">
-          
-          <button type="button" class="btn btn-outline-danger"  data-backdrop="static"
-          data-keyboard="false" data-toggle="modal" data-dismiss="modal" data-target="#metodos-pago">Cerrar</button>
+
+          <button type="button" class="btn btn-outline-danger" data-backdrop="static" data-keyboard="false"
+            data-toggle="modal" data-dismiss="modal" data-target="#metodos-pago">Cerrar</button>
           <button type="button" id="reporte-deposito" class=" btn btn-outline-success" data-backdrop="static"
             data-keyboard="false" data-toggle="modal" data-dismiss="modal" data-target="#reporteModalfi"
             onclick="deposito()">Reportar Pago</button>
@@ -1148,14 +1148,14 @@
   </div>
 
   <!--Modal tarjetas save -->
-  <div class="modal fade  " id="Modaltarjeta"  tabindex="-1" role="dialog"
-    aria-labelledby="reporteModalLabel" aria-hidden="true">
+  <div class="modal fade  " id="Modaltarjeta" tabindex="-1" role="dialog" aria-labelledby="reporteModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered  " role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Reporta </h5>
           <button type="button" class="cerrar close" data-dismiss="modal" aria-label="Close">
-           <!-- <span aria-hidden="true">&times;</span>
+            <!-- <span aria-hidden="true">&times;</span>
           </button>-->
         </div>
         <div class="modal-body">
@@ -1266,13 +1266,13 @@
     </div>
   </div>
   <!--Modal Reportar deposito -->
-  <div class="modal fade  " id="reporteModalfi" tabindex="-1" role="dialog"
-    aria-labelledby="reporteModalLabel" aria-hidden="true">
+  <div class="modal fade  " id="reporteModalfi" tabindex="-1" role="dialog" aria-labelledby="reporteModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Reporta tu depósito </h5>
-         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>-->
         </div>
@@ -1379,9 +1379,10 @@
               </div>
 
               <div class="row p-3 d-flex justify-content-center m-1">
-                 
+
                 <button class=" col-4 m-1 btn btn-outline-danger" id="cerrar" data-backdrop="static"
-                data-keyboard="false" data-toggle="modal" data-dismiss="modal" data-target="#depositoModal">Cancelar</button>
+                  data-keyboard="false" data-toggle="modal" data-dismiss="modal"
+                  data-target="#depositoModal">Cancelar</button>
                 <button class="col-4 m-1  btn btn-outline-success" type="submit" id="td">Reportar Pago</button>
               </div>
             </form>
@@ -1436,7 +1437,7 @@
                 <tbody class="text-center ">
                   <tr>
                     <td class="align-self-center">
-                      <div class="d-flex justify-content-center align-items-stretch">
+                      <div class="d-flex  align-items-stretch">
                         <div class="rounded-3 px-2" style="background-color: brown; width: 30px; height: 20px;">
                         </div>
                         <p class="px-2 " style="font-size: 0.8em;">GENERAL NORTE</p>
@@ -1444,11 +1445,14 @@
                     </td>
                     <td class="align-self-center">$20</td>
                     <td class="align-self-center text-center">
-                      <div class="input-group">
-                        <p class="resta input-group-text btn"><i class="fa fa-minus"></i></p>
-                        <input type="text" onkeypress="return solonumeros(event)" value="1" style="width: 10px ;" class="form-control form-control-sm"
-                          aria-label="Amount (to the nearest dollar)">
-                        <p class="suma input-group-text btn"><i class="fa fa-plus"></i></p>
+                      <div class="input-group justify-content-center ">
+
+                        <p class="resta input-group-text btn rounded-6"><i class="fa fa-minus"></i></p>
+                        <input size="3" type="text" onkeypress="return solonumeros(event)" value="1"
+                          class=" form-control-sm" />
+                        <p class="suma input-group-text btn rounded-6"><i class="fa fa-plus"></i></p>
+                        <p class=" asientos  input-group-text btn btn-primary rounded-6 "><i class="fa fa-plus"></i>
+                        </p>
                       </div>
                       <!--<div style="width: 70px;">
 
@@ -1461,7 +1465,7 @@
                   </tr>
                   <tr>
                     <td class="align-self-center">
-                      <div class="d-flex justify-content-center align-items-stretch">
+                      <div class="d-flex  align-items-stretch">
                         <div class="rounded-3  px-2"
                           style="background-color: rgb(231, 134, 43); width: 30px; height: 20px;">
                         </div>
@@ -1469,9 +1473,19 @@
                       </div>
                     </td>
                     <td class="align-self-center">$20</td>
-                    <td class="align-self-center text-center">
-                      <button class="asientos btn-primary badge text-bg-primary  ">SELECCIONE ASIENTO</button>
-                      <!--<button class="btn btn-sm btn-rounded " style="background-color:rgb(253, 253, 249) ;">SELECCIONE
+
+                    <td class=" d-flex align-items-center text-center">
+                      <div class="input-group justify-content-center ">
+
+                        <p class="resta input-group-text btn rounded-6"><i class="fa fa-minus"></i></p>
+                        <input size="3" type="text" onkeypress="return solonumeros(event)" value="1"
+                          class=" form-control-sm" />
+                        <p class="suma input-group-text btn rounded-6"><i class="fa fa-plus"></i></p>
+                        <p class=" asientos  input-group-text btn btn-primary rounded-6 "><i class="fa fa-plus"></i>
+                        </p>
+                      </div>
+                      <!--<button class="asientos btn-primary badge text-bg-primary  ">SELECCIONE ASIENTO</button>
+                      -<button class="btn btn-sm btn-rounded " style="background-color:rgb(253, 253, 249) ;">SELECCIONE
                         ASIENTO</button>-->
                     </td>
                     <td class="align-self-center">
@@ -1480,7 +1494,7 @@
                   </tr>
                   <tr>
                     <td class="align-self-center">
-                      <div class="d-flex justify-content-center align-items-stretch">
+                      <div class="d-flex  align-items-stretch">
                         <div class="rounded-3  px-2"
                           style="background-color: rgba(248, 156, 95, 0.87); width: 30px; height: 20px;">
                         </div>
@@ -1488,9 +1502,18 @@
                       </div>
                     </td>
                     <td class="align-self-center">$20</td>
-                    <td class="align-self-center text-center">
+                    <td class=" d-flex align-items-center text-center">
+                      <div class="input-group justify-content-center ">
 
-                      <button class="asientos btn-primary badge text-bg-primary  ">SELECCIONE ASIENTO</button>
+                        <p class="resta input-group-text btn rounded-6"><i class="fa fa-minus"></i></p>
+                        <input size="3" type="text" onkeypress="return solonumeros(event)" value="1"
+                          class=" form-control-sm" />
+                        <p class="suma input-group-text btn rounded-6"><i class="fa fa-plus"></i></p>
+                        <p class=" asientos  input-group-text btn btn-primary rounded-6 "><i class="fa fa-plus"></i>
+                        </p>
+                      </div>
+
+                      <!-- <button class="asientos btn-primary badge text-bg-primary  ">SELECCIONE ASIENTO</button>-->
                     </td>
                     <td class="align-self-center">
                       <p class="px-2 " style="font-size: 0.8em;">SILLAS NUMERADA</p>
@@ -1505,9 +1528,10 @@
                 </tbody>
               </table>
             </div>
-            <div class=" table-responsive" >
-              <table class="detalles-resumen table table-striped display cell-border" style="width:100%"cellpadding="0">
-                <thead class="bg-secondary" >
+            <div class=" table-responsive">
+              <table class="detalles-resumen table table-striped display cell-border" style="width:100%"
+                cellpadding="0">
+                <thead class="bg-secondary">
                   <tr>
                     <th class=" text-center" scope="col">LOCALIDAD</th>
                     <th class=" text-center" scope="col">FILA</th>
@@ -1584,7 +1608,7 @@
           <div class="col-lg-4 p-0 d-flex justify-content-center align-items-center bg-black">
 
           </div>
-          
+
 
 
         </div>
@@ -1727,8 +1751,8 @@
             </div>
             <div class="col-12 col-lg-2 text-center align-items-end ">
 
-              <button id="pagarcuenta" class="btn btn-primary" disabled data-dismiss="modal" data-toggle="modal" data-target="#metodos-pago"
-                data-backdrop="static" data-keyboard="false" onclick="pagar()">
+              <button id="pagarcuenta" class="btn btn-primary" disabled data-dismiss="modal" data-toggle="modal"
+                data-target="#metodos-pago" data-backdrop="static" data-keyboard="false" onclick="pagar()">
                 <i class="fa fa-credit-card p-1"> </i>PAGAR
               </button>
 
@@ -1770,7 +1794,7 @@
             </i>
             Efectivo</a>
           <a class="deposito list-group-item list-group-item-action" id="list-deposito-list" data-dismiss="modal"
-          data-backdrop="static" data-keyboard="false" data-toggle="modal"  data-target="#depositoModal"
+            data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#depositoModal"
             href="#deposito" onclick="">
             <i class="">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank2"
@@ -1875,29 +1899,29 @@
               <form class="row g-3 needs-validation" novalidate>
                 <div class="col-md-12">
                   <label for="validationCustom01" class="form-label">Numero de la Tarjeta</label>
-                  
+
                   <input type="text" class="form-control" id="idcard" onkeypress="return solonumeros(event)" required>
-             
+
                 </div>
                 <div class="col-md-12">
                   <label for="validationCustom02" class="form-label">Nombre del titular</label>
-                  
+
                   <input type="text" class="form-control" onkeypress="return soloLetras(event)" id="titular" required>
-                  
+
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="validationCustomUsername" class="form-label">Fecha de expiracion</label>
                   <div class="input-group has-validation">
-                    
+
                     <input type="text" class="form-control" id="fechaex" required>
                   </div>
                 </div>
                 <div class="cl-6 col-md-3">
                   <label for="validationCustom03" class="form-label">CVD</label>
-                  <input type="text" onkeypress="return solonumeros(event)"  class="form-control" id="codigo" required>
-                  
+                  <input type="text" onkeypress="return solonumeros(event)" class="form-control" id="codigo" required>
+
                 </div>
-               
+
                 <div class="col-md-3">
                   <label for="validationCustom05" class="form-label">Diferir</label>
                   <select class="form-select" id="diferir" required>
@@ -1915,17 +1939,18 @@
                     <option value="12">12 meses</option>
                   </select>
                 </div>
-               
-                <div class="col-12">
-                  <a class="btn btn-primary"data-dismiss="modal"
-                  data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#metodos-pago">Regresar</a>
-                
 
-                  <button class="tarjeta-credi btn btn-primary pagar-td float-end" id="pagar-td" type="submit">PAGAR</button>
+                <div class="col-12">
+                  <a class="btn btn-primary" data-dismiss="modal" data-backdrop="static" data-keyboard="false"
+                    data-toggle="modal" data-target="#metodos-pago">Regresar</a>
+
+
+                  <button class="tarjeta-credi btn btn-primary pagar-td float-end" id="pagar-td"
+                    type="submit">PAGAR</button>
                 </div>
               </form>
-               
-              
+
+
             </div>
             <div class="d-none d-sm-none d-md-block">
               <div class="p-2 d-flex  flex-column d-lg-block ">

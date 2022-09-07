@@ -154,26 +154,26 @@ function solonumeros(e) {
 }
 var data;
 var evento;
-var totaldetalle=0;
-function cronometro(e,b) {
-  totaldetalle=0;
+var totaldetalle = 0;
+function cronometro(e, b) {
+  totaldetalle = 0;
   $('.detalles-resumen>tbody').empty()
   $('#evento').text(e)
   evento = e;
-  for(i=1;i<5;i++){
-  var filas2 =  "<tr><td class='localidad'style='font-size: 0.8em;'>VIP-"+b+"</td>"
-filas2 = filas2 + "<td class='fila'style='font-size: 0.8em;'>f"+i+"</td>"
-filas2 = filas2 + "<td class='asiento'style='font-size: 0.8em;'>66</td>"
-filas2 = filas2 + "<td class='total'style='font-size: 0.8em;'>$140</td>"
-filas2= filas2 + "<td ><button class='btn btn-primary badge text-bg-primary borrar'>ELIMINAR</button></td></tr>"
-$('.detalles-resumen>tbody').append(filas2)
+  for (i = 1; i < 5; i++) {
+    var filas2 = "<tr><td class='localidad'style='font-size: 0.8em;'>VIP-" + b + "</td>"
+    filas2 = filas2 + "<td class='fila'style='font-size: 0.8em;'>f" + i + "</td>"
+    filas2 = filas2 + "<td class='asiento'style='font-size: 0.8em;'>66</td>"
+    filas2 = filas2 + "<td class='total'style='font-size: 0.8em;'>$140</td>"
+    filas2 = filas2 + "<td ><button class='btn btn-primary badge text-bg-primary borrar'>ELIMINAR</button></td></tr>"
+    $('.detalles-resumen>tbody').append(filas2)
   }
   document.querySelectorAll('.detalles-resumen tbody tr').forEach(function (e) {
     var valor = e.querySelector('.total').innerText.replace("$", "")
     totaldetalle += parseFloat(valor)
     console.log(totaldetalle)
-});
-$('.total-detalle').text('$'+totaldetalle)
+  });
+  $('.total-detalle').text('$' + totaldetalle)
   display = document.querySelector('#cronometro')
   var tiempo = 60 * 10
   var timer = tiempo, minutos = 0, segundos = 0;
@@ -186,13 +186,20 @@ $('.total-detalle').text('$'+totaldetalle)
     minutos = minutos < 10 ? "0" + minutos : minutos;
     segundos = segundos < 10 ? "0" + segundos : segundos;
 
-    //console.log(minutes + ":" + seconds)
-    display.textContent = minutos + ":" + segundos;
+    console.log(timer)
+    if (timer === 0) {
 
-    if (--timer < 0) {
-      timer = tiempo;
-    }  //clearInterval(data);Swal.fire('SU TIEMPO SE TERMINO') 
+      clearInterval(data);
+      display.textContent = "00:00";
+      Swal.fire('ggg', '', 'success')
+    }
+    else {
+      display.textContent = minutos + ":" + segundos;
 
+      if (--timer < 0) {
+        timer = tiempo;
+      }  //clearInterval(data);Swal.fire('SU TIEMPO SE TERMINO') 
+    }
   }, 1000);
 
 
