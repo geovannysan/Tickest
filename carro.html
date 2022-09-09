@@ -29,7 +29,7 @@
   <!--pusher-->
   <script src="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.css">
-
+  <script src="https://unpkg.com/imask"></script>
 
   <!--  load DataTables  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
@@ -117,221 +117,140 @@
   <div class="container " id="nuevoseventos">
 
     <div class="container-fluid p-3 ">
-      <div class="row">
-        <div class="col-lg-12 p-0">
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container" >
+          <svg id="e6wrdjWV9Uv1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 750 471" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><g><g><g><g><path d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40h-670c-22.1,0-40-17.9-40-40L0,40C0,17.9,17.9,0,40,0Z" fill="#ca7e0e"/></g></g><path d="M750,431v-237.8C532.4,135.7,193.6,179.7,0,218.1L0,431c0,22.1,17.9,40,40,40h670c22.1,0,40-17.9,40-40Z" fill="#7e4f0b"/></g>
+            <text id="card-number" class="card-titel" dx="0" dy="0" font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" transform="translate(60.106 295.012)">
+              <tspan  font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" font-style="normal" transform="translate(60.106 295.012)"><![CDATA[
+            0123 4567 8910 1112
+            ]]></tspan></text>
+            <text id="textcart" class="card-titel"  dx="0" dy="0" font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" transform="translate(54.1064 428.172)"><tspan font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" font-style="normal" transform="translate(54.1064 428.172)"><![CDATA[
+            JOHN DOE
+            ]]></tspan></text>
+            <text id="card-pro" class="card-subtitel" style="font-size: 1.8em;" dx="0" dy="0" font-family="&quot;Times New Roman&quot;"  font-weight="400" transform="translate(54.1074 389.879)"><tspan font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" font-style="normal" transform="translate(54.1074 389.879)">
+              <![CDATA[
+            NOMBRE DE PROPIETARIO
+            ]]></tspan></text>
+            <text id="card-exp" class="card-subtitel" dx="0" dy="0" font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" transform="translate(479.775 388.879)"><tspan font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" font-style="normal" transform="translate(479.775 388.879)"><![CDATA[
+            EXPIRA
+            ]]></tspan></text>
+            <text id="card-numero" class="card-subtitel" dx="0" dy="0" font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" transform="translate(65.1054 241.5)"><tspan font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" font-style="normal" transform="translate(65.1054 241.5)"><![CDATA[
+            NUMERO
+            ]]></tspan></text><g transform="translate(1.640228 0)">
+            <text id="card-date" class="card-subtitel-1" dx="0" dy="0" font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" transform="translate(574.422 433.81)"><tspan font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" font-style="normal" transform="translate(574.422 433.81)"><![CDATA[
+            01/23
+            ]]></tspan></text>
+            <text id="card-valid" class="card-subtitel-1" dx="0" dy="0" font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" transform="translate(479.385 417.01)"><tspan font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" font-style="normal" transform="translate(479.385 417.01)"><![CDATA[
+            VALID
+            ]]></tspan></text>
+            <text id="card-date-val" class="card-subtitel-1" dx="0" dy="0" font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" transform="translate(479.385 435.676)"><tspan font-family="&quot;Times New Roman&quot;" font-size="16" font-weight="400" font-style="normal" transform="translate(479.385 435.676)"><![CDATA[
+            DATE
+            ]]></tspan></text><polygon points="554.5,421 540.4,414.2 540.4,427.9"/></g><g><g><path d="M168.1,143.6h-85.2c-10.2,0-18.5-8.3-18.5-18.5v-50.2c0-10.2,8.3-18.5,18.5-18.5h85.3c10.2,0,18.5,8.3,18.5,18.5v50.2c-.1,10.2-8.4,18.5-18.6,18.5Z" fill="#d6c8c8"/></g><g><g><rect width="1.5" height="60" rx="0" ry="0" transform="translate(82 70)"/></g><g><rect width="1.5" height="60" rx="0" ry="0" transform="translate(167.4 70)"/></g><g><path d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3-3-3.4-4.7-7.7-4.7-12.3c0-10.2,8.3-18.5,18.5-18.5s18.5,8.3,18.5,18.5c0,4.6-1.7,8.9-4.7,12.3c3,3.4,4.7,7.7,4.7,12.3-.1,10.2-8.3,18.5-18.5,18.5Zm0-60c-9.3,0-16.9,7.6-16.9,16.9c0,4.4,1.7,8.6,4.8,11.8l.5.5-.5.5c-3.1,3.2-4.8,7.4-4.8,11.8c0,9.3,7.6,16.9,16.9,16.9s16.9-7.6,16.9-16.9c0-4.4-1.7-8.6-4.8-11.8l-.5-.5.5-.5c3.1-3.2,4.8-7.4,4.8-11.8c0-9.3-7.6-16.9-16.9-16.9Z"/></g><g><rect width="25.8" height="1.5" rx="0" ry="0" transform="translate(82.8 82.1)"/></g><g><rect width="26.1" height="1.5" rx="0" ry="0" transform="translate(82.8 117.9)"/></g><g><rect width="25.8" height="1.5" rx="0" ry="0" transform="translate(142.4 82.1)"/></g><g><rect width="26.2" height="1.5" rx="0" ry="0" transform="translate(142 117.9)"/></g></g></g></g></svg>
+        </div>
+        <div class="container justify-content-center "style="width: 80%;">
+          <div class="row pt-3 pb-3">
+           
+            <input type="text" onkeypress="return solonumeros(event)"  id="number-card" style="text-transform:uppercase;" class="form-control col-sm">
+          
+            
+              <input type="text" id="titular" onkeypress="return soloLetras(event)"  style="width: 100%;" class=" form-control col-sm"></div>
+          
           <div class="row ">
-            <div class="col-7 align-self-center text-center">
-              <p class="" id="evento"></p>
-              <p style="font-size: 0.8em;">SELECCIONE LAS ENTRADAS POR LOCALIDAD</h6>
-
-            </div>
-            <div class="col-sm d-flex flex-column align-self-center text-center align-items-stretch ">
-              <div style="font-size: 0.7em;">
-                TIEMPO PARA COMPRA
-              </div>
-              <div class="text-danger " id="cronometro" style="font-size: 1.2em;">
-
-              </div>
-              <div style="font-size: 0.7em;">
-                MINUTOS SEGUNDOS
-              </div>
-            </div>
-          </div>
-          <div class="tabla-selecion table-responsive p-0">
-            <table class="localidades table table-striped vertical-align px-0" width="100%">
-              <thead class="bg-secondary">
-                <tr>
-                  <th class="text-center" scope="col">LOCALIDAD</th>
-                  <th class="text-center" scope="col">PRECIO</th>
-                  <th class="text-center" scope="col">CANTIDAD</th>
-                  <th class="text-center" scope="col">CARACTERISTICA</th>
-                </tr>
-              </thead>
-              <tbody class="text-center ">
-                <tr>
-                  <td class="align-self-center">
-                    <div class="d-flex justify-content-center align-items-stretch">
-                      <div class="rounded-3 px-2" style="background-color: brown; width: 30px; height: 20px;">
-                      </div>
-                      <p class="px-2 " style="font-size: 0.8em;">GENERAL NORTE</p>
-                    </div>
-                  </td>
-                  <td class="align-self-center">$20</td>
-                  <td class=" d-flex align-items-center text-center">
-                    <div class="input-group justify-content-center ">
-
-                      <p class="resta input-group-text btn rounded-6"><i class="fa fa-minus"></i></p>
-                      <input size="3" type="text" onkeypress="return solonumeros(event)" value="1"
-                        class=" form-control-sm" />
-                      <p class="suma input-group-text btn rounded-6"><i class="fa fa-plus"></i></p>
-                      <p class=" asientos  input-group-text btn btn-primary rounded-6 "><i class="fa fa-plus"></i>
-                      </p>
-                    </div>
-
-
-
-                    <!--<div style="width: 70px;">
-      
-                              <input class="form-control" min="1" value="1" id="ex1" type="number" style="font-size: 0.8em;">
-                            </div>-->
-                  </td>
-                  <td class="align-self-center">
-                    <p class="px-2 " style="font-size: 0.8em;">GRADAS NO NUMERADO</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="align-self-center">
-                    <div class="d-flex justify-content-center align-items-stretch">
-                      <div class="rounded-3  px-2"
-                        style="background-color: rgb(231, 134, 43); width: 30px; height: 20px;">
-                      </div>
-                      <p class="px-2 " style="font-size: 0.8em;">VIP - PIMPINELA</p>
-                    </div>
-                  </td>
-                  <td class="align-self-center">$20</td>
-                  <td class=" d-flex align-items-center text-center">
-                    <div class="input-group justify-content-center ">
-
-                      <p class="resta input-group-text btn rounded-6"><i class="fa fa-minus"></i></p>
-                      <input size="3" type="text" onkeypress="return solonumeros(event)" value="1"
-                        class=" form-control-sm" />
-                      <p class="suma input-group-text btn rounded-6"><i class="fa fa-plus"></i></p>
-                      <p class=" asientos  input-group-text btn btn-primary rounded-6 "><i class="fa fa-plus"></i>
-                      </p>
-                    </div>
-                  </td>
-                  <td class="align-self-center">
-                    <p class="px-2 " style="font-size: 0.8em;">SILLAS NUMERADA</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="align-self-center">
-                    <div class="d-flex justify-content-center align-items-stretch">
-                      <div class="rounded-3  px-2"
-                        style="background-color: rgba(248, 156, 95, 0.87); width: 30px; height: 20px;">
-                      </div>
-                      <p class="px-2 " style="font-size: 0.8em;">VIP - PIMPINELA</p>
-                    </div>
-                  </td>
-                  <td class="align-self-center">$20</td>
-                  <td class=" d-flex align-items-center text-center">
-                    <div class="input-group justify-content-center ">
-
-                      <p class="resta input-group-text btn rounded-6"><i class="fa fa-minus"></i></p>
-                      <input size="3" type="text" onkeypress="return solonumeros(event)" value="1"
-                        class=" form-control-sm" />
-                      <p class="suma input-group-text btn rounded-6"><i class="fa fa-plus"></i></p>
-                      <p class=" asientos  input-group-text btn btn-primary rounded-6 "><i class="fa fa-plus"></i>
-                      </p>
-                    </div>
-                  </td>
-                  <td class="align-self-center">
-                    <p class="px-2 " style="font-size: 0.8em;">SILLAS NUMERADA</p>
-                  </td>
-                </tr>
-
-
-
-
-
-
-              </tbody>
-            </table>
-          </div>
-          <div class=" table-responsive">
-            <table class="detalles-resumen table table-striped display cell-border" style="width:100%" cellpadding="0">
-              <thead class="bg-secondary">
-                <tr>
-                  <th class=" text-center" scope="col">LOCALIDAD</th>
-                  <th class=" text-center" scope="col">FILA</th>
-                  <th class=" text-center" scope="col">ASIENTO</th>
-                  <th class=" text-center" scope="col">TOTAL</th>
-                  <th class="text-center" scope="col">ACCION</th>
-                </tr>
-              </thead>
-              <tbody class="text-center ">
-                <tr>
-                  <td class="localidad" style="font-size: 0.8em;"> VIP-PIMPINELA </td>
-                  <td class="fila" style="font-size: 0.8em;">F-1</td>
-                  <td class="asiento" style="font-size: 0.8em;">66</td>
-                  <td class="total" style="font-size: 0.8em;">$140</td>
-                  <td>
-
-                    <button class="btn btn-primary badge text-bg-primary borrar">ELIMINAR</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="localidad" style="font-size: 0.8em;"> VIP-PIMPINELA </td>
-                  <td class="fila" style="font-size: 0.8em;">F-2</td>
-                  <td class="asiento" style="font-size: 0.8em;">66</td>
-                  <td class="total" style="font-size: 0.8em;">$140</td>
-                  <td>
-
-                    <button class="btn btn-primary badge text-bg-primary borrar">ELIMINAR</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="localidad" style="font-size: 0.8em;"> VIP-PIMPINELA </td>
-                  <td class="fila" style="font-size: 0.8em;">F-2</td>
-                  <td class="asiento" style="font-size: 0.8em;">66</td>
-                  <td class="total" style="font-size: 0.8em;">$140</td>
-                  <td>
-
-                    <button class="btn btn-primary badge text-bg-primary borrar">ELIMINAR</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="row justify-content-center bg-gray">
-            <div class="col-6  d-flex  align-self-center justify-content-center">
-              <h4>TOTAL A PAGAR</h4>
-              <h4 class="px-1 total-detalle"> </h4>
-            </div>
-            <div class="col-sm d-flex flex-column align-items-end ">
-              <div class="px-5">
-                Método de pago
-                <div class="form-check">
-                  <input class="v-check form-check-input" type="radio" name="flexRadioDefault" id="efectivo-tarj">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Efectivo
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="v-check form-check-input" type="radio" name="flexRadioDefault" id="chektarjeta">
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    Tarjeta
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="deposito-tarj" checked>
-                  <label class="form-check-label" for="flexRadioDefault3">
-                    Transferencia
-                  </label>
-                </div>
-              </div>
-
-
-            </div>
-            <div class="col-6 py-2 d-flex justify-content-center align-items-center">
-
-
-              <p href="#" data-dismiss="modal" data-toggle="modal" data-target="#detallecomp" data-backdrop="static"
-                data-keyboard="false" onclick="opciones()" class="btn btn-primary fw-bold px-3 py-2 rounded-6">
-                CONTINUAR</p>
-            </div>
-
-
+            
+              
+              <input class="form-control col-sm" placeholder="MM/YY" id="fecha" style="width: 100%;" type="text">
+           
+            
+              
+              <input class="form-control col-sm" onkeypress="return solonumeros(event)" style="width: 100%;" id="codigo" type="text">
+           
+            
+              
+              <button class="btn btn-outline-success col-sm" style="width: 100%;">Valida </button>
+            
           </div>
         </div>
-
-
-
-
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
+</div>
+    </div>
+  </div>
+<script>
+  $("#textcart").text("---------------");
+  $("#card-number").text("---- ---- ---- ----");
+  $("#card-pro").text("Nombre del propietario");
+  $("#card-valid").text("Valid");
+  $("#card-date-val").text("Date");
+  $("#card-exp").text("Expira");
+  $("#card-date").text("MM/YY")
+  $("#card-numero").text("Número")
+  var overwriteMask = IMask(
+  document.getElementById('fecha'),
+  {
+    mask: '00/0000',
+    
+  }
+);
+var overwriteMask = IMask(
+  document.getElementById('number-card'),
+  {
+    mask: '0000-0000-0000-0000',
+  }
+);
 
+  //document.getElementById('titular')
+  $(document).on('input','#titular',function(){
+    var input = $(this);  
+    $("#textcart").text(input.val())
+  })
+  $(document).on('input','#number-card',function(){
+    var input = $(this);  
+    $("#card-number").text(input.val())
+  })
+  $(document).on('input','#fecha',function(){
+    var input = $(this);  
+    $("#card-date").text(input.val())
+  })
+
+  
+
+  //document.querySelector('.textcart').style.fontSize = "2em";
+</script>
+<style>
+
+  .card-titel{
+    font-size: 1.8em;
+    text-transform: capitalize;
+  }
+  .card-subtitel-1{
+    font-size: 1.4em;
+    text-transform: capitalize;
+  }
+  .card-subtitel{
+    font-size: 1.6em;
+    text-transform: capitalize;
+  }
+</style>
 
 
 
